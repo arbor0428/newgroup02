@@ -1,0 +1,30 @@
+SITE #1 : https://iexcloud.io
+
+Free IEX Price for Apple
+https://cloud.iexapis.com/stable/tops?token=pk_845304826b7b47fcad990af8144ba285&symbols=aapl
+
+Stock Quote for Apple
+https://cloud.iexapis.com/stable/stock/aapl/quote?token=pk_845304826b7b47fcad990af8144ba285
+
+
+[[[[[[[[[[[[[[[CORE DATA]]]]]]]]]]]]]]]]
+Analyst Recommendations and Price Targets
+https://cloud.iexapis.com/stable/time-series/CORE_ESTIMATES/aapl?token=pk_845304826b7b47fcad990af8144ba285
+
+Balance Sheet
+https://cloud.iexapis.com/stable/stock/aapl/balance-sheet?token=pk_845304826b7b47fcad990af8144ba285
+
+
+Company
+https://cloud.iexapis.com/stable/stock/appl/delayed-quote?token=pk_845304826b7b47fcad990af8144ba285
+
+
+
+
+
+
+
+SITE #2 : https://www.alphavantage.co
+
+TIME_SERIES_DAILY
+https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=5min&apikey=KOVFMLMX1LDVJHVQ

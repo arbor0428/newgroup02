@@ -319,7 +319,7 @@ function comma(num) {
 function transComma() {
   let val = event.target.value;
   //console.log(val);
-  val = val.replace(",", "");
+  val = val.replace(/,/gi, "");
   val = Number(val);
 
   event.target.value = comma(val);

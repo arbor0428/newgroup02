@@ -1,7 +1,7 @@
 <?
 	$n_url = "./";
 
-	include "./header.php";
+	include $_SERVER["DOCUMENT_ROOT"]."/new/header.php";
 
     $mainTitle =  'Ȩ';
 
@@ -68,7 +68,7 @@ $(document).ready(function () {
 				<!-- main_calendar-->
 				<div class="calendar_wrap">
 					<?
-						include '../timechk/calendar.php';
+						include './timechk/calendar.php';
 					?>
 				</div>
 				<!-- //main_calendar-->   
@@ -204,4 +204,5 @@ $(document).ready(function () {
 
 	</div>
 </div>
+
 

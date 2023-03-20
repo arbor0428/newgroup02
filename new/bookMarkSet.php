@@ -45,7 +45,7 @@
 					foreach($menu as $key => $value){							
 						if($value == $bookmark01 || $value == $bookmark02 || $value == $bookmark03 || $value == $bookmark04 || $value == $bookmark05 || $value == $bookmark06 || $value == $bookmark07 || $value == $bookmark08){
 						?>							
-						<div class='book_mark_box select'> <?=$key?> <input type='hidden' value=<?=$value?> /></div>					
+						<div class='book_mark_box pop select'> <?=$key?> <input type='hidden' value=<?=$value?> /></div>					
 						<?
 							}else {
 						?>

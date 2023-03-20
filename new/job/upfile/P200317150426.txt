@@ -1,0 +1,6 @@
+<input type="button" value="Button" onClick="loadWeb()" />
+    <script type="text/javascript">
+        function loadWeb() {
+            location.href = "http://i-web.kr/skins/blockContent/inc/map_test.php?posx="+ InterfaceJsAndroid.returnPosx() +"&posy=" + InterfaceJsAndroid.returnPosy()
+        }
+    </script>

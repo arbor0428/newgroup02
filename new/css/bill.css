@@ -11,7 +11,9 @@
 	position: relative;
 }
 .bill input[type="text"] {
+	width: 100%;
   border: none;
+	height: 35px;
 }
 .bill input[type="text"]:focus {
   outline: none;
@@ -26,6 +28,7 @@
 }
 .bill_title input[type="text"] {
   width: 100%;
+	height: auto;
   text-align: center;
   color: #000;
   font-size: 50px;
@@ -450,7 +453,7 @@ textarea.bill_sort {
 table.transition_table {
   width: 100%;
   table-layout: fixed;
-}
+}	
 table.transition_table td input{
 	text-align: center;
 }
@@ -485,4 +488,55 @@ table.transition_table select {
   -moz-appearance: none;
   appearance: none;
   cursor: pointer;
+}
+/****************
+구매품의서
+******************/
+.order_wrap {
+	width: 100%;
+  margin: 50px 0;
+}
+.order_top_tbl {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 2px solid #796c98;
+  border-top: 2px solid #796c98;
+	table-layout: fixed;
+}
+table.order_top_tbl tr {
+  border-top: 1px solid #ddd;
+}
+table.order_top_tbl th {
+  background-color: #e2e8f4;
+  padding: 20px 10px;
+  box-sizing: border-box;
+}
+table.order_list_tbl {
+  width: 100%;
+  border-collapse: collapse;
+  border-bottom: 2px solid #796c98;
+  border-top: 2px solid #796c98;
+  table-layout: fixed;
+}
+.order_top_tbl input,
+.order_top_tbl textarea {
+	width: 100%;
+  border-bottom: none;
+  font-size: 16px;
+  text-align: center;
+	padding: 5px;
+}
+.order_list_tbl td input,
+.order_list_tbl td textarea {
+  width: 100%;
+	
+}
+.note_wrap {
+  width: 100%;
+  margin: 50px auto;
+}
+.note_wrap textarea {
+  width: 100%;
+  border: 1px solid #ddd;
+  resize: none;
 }

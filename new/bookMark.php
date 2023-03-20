@@ -7,20 +7,20 @@
 	 <div class="book_mark_wrap">
 		<?
 			$menu = array(
-				"<img src='/new/images/book14.png'><p>업무요청</p>" => 'job/up_index.php?type=write', 
-				"<img src='/new/images/book01.png'><p>업무현황</p>" => 'job/index.php', 
-				"<img src='/new/images/book02.png'><p>근태현황</p>" =>'timechk/up_index.php',
-				"<img src='/new/images/book03.png'><p>업무일지</p>" =>'daylog/up_index.php',
-				"<img src='/new/images/book04.png'><p>인사관리</p>" =>'member/up_index.php',	
+				"<img src='/new/images/book14.png'><p>업무요청</p>" => 'new/job/up_index.php?type=write', 
+				"<img src='/new/images/book01.png'><p>업무현황</p>" => 'new/job/up_index.php', 
+				"<img src='/new/images/book02.png'><p>근태현황</p>" =>'new/timechk/up_index.php',
+				"<img src='/new/images/book03.png'><p>업무일지</p>" =>'new/daylog/up_index.php',
+				"<img src='/new/images/book04.png'><p>인사관리</p>" =>'new/member/up_index.php',	
 
-				"<img src='/new/images/book05.png'><p>영업현황</p>" =>'ing01/up_index.php',
-				"<img src='/new/images/book06.png'><p>에이전시</p>" =>'ing02/up_index.php',
-				"<img src='/new/images/book07.png'><p>결재청구</p>" =>'ing02/up_index02.php',
-				"<img src='/new/images/book08.png'><p>부분제작</p>" =>'ing02/up_index.php?f_status=부분제작',
-				"<img src='/new/images/book09.png'><p>거래처관리</p>" =>'bus01/up_index.php',
-				"<img src='/new/images/book10.png'><p>참고업체</p>" =>'bus02/up_index.php',
-				"<img src='/new/images/book11.png'><p>광고관리</p>" =>'searchad/up_index.php',
-				"<img src='/new/images/book12.png'><p>LGU</p>" =>'lgu/up_index.php',
+				"<img src='/new/images/book05.png'><p>영업현황</p>" =>'new/ing01/up_index.php',
+				"<img src='/new/images/book06.png'><p>에이전시</p>" =>'new/ing02/up_index.php',
+				"<img src='/new/images/book07.png'><p>결재청구</p>" =>'new/ing02/up_index02.php',
+				"<img src='/new/images/book08.png'><p>부분제작</p>" =>'new/ing02/up_index.php?f_status=부분제작',
+				"<img src='/new/images/book09.png'><p>거래처관리</p>" =>'new/bus01/up_index.php',
+				"<img src='/new/images/book10.png'><p>참고업체</p>" =>'new/bus02/up_index.php',
+				"<img src='/new/images/book11.png'><p>광고관리</p>" =>'new/searchad/up_index.php',
+				"<img src='/new/images/book12.png'><p>LGU</p>" =>'new/lgu/up_index.php',
 
 				"<img src='/new/images/book13.png'><p>전자결재</p>" =>'approval/up_index.php',
 			);

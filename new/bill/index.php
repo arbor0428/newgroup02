@@ -70,8 +70,8 @@
 				<a>
 					<div class="list-btn deactivation">지출결의서</div>
 				</a>
-				<a>
-					<div class="list-btn deactivation">구매 품의서</div>
+				<a href="/new/bill/order.php">
+					<div class="list-btn finance">구매 품의서</div>
 				</a>
 				<a>
 					<div class="list-btn deactivation">경비지급<br />요청</div>

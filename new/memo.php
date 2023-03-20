@@ -1,23 +1,3 @@
-<?
-$sql = "select * from wo_memo where userid='$GBL_USERID'";
-$result = mysql_query($sql);
-$num = mysql_num_rows($result);
-
-if ($num) {
-  $row = mysql_fetch_array($result);
-  $memoTxt = $row['ment'];
-
-  if ($memoTxt) {
-    $memoTxt = str_replace("&nbsp;", " ", $memoTxt);
-    $memoTxt = str_replace("&lt;", "<", $memoTxt);
-    $memoTxt = str_replace("&gt;", ">", $memoTxt);
-    $memoTxt = str_replace("&quot;", "\"", $memoTxt);
-    $memoTxt = str_replace("&#124;", "\|", $memoTxt);
-    $memoTxt = str_replace("<br><br>", "\r\n\r\n", $memoTxt);
-    $memoTxt = str_replace("<BR>", "\r\n", $memoTxt);
-  }
-}
-?>
 
 <style>
   textarea:focus {
@@ -128,23 +108,47 @@ if ($num) {
 </style>
 
 <script>
-  function memoChk() {
-    form = document.frm_memo;
-    form.target = 'ifra_memo';
-    form.action = '/module/memo_proc.php';
-    form.submit();
+	  function memoChk(id) {
+		form = document.frm_memo;
+		//id = $('#'+id);
+		
+		if (id.includes('memoTxt01')){
+			form.target = 'ifra_memo';
+			form.action = '/module/memo_proc01.php';
+			console.log(id);
+		}
+		if (id.includes('memoTxt02')){
+			form.target = 'ifra_memo';
+			form.action = '/module/memo_proc02.php';
+			console.log(id);
+		}
+		 if (id.includes('memoTxt03')){
+			form.target = 'ifra_memo';
+			form.action = '/module/memo_proc03.php';
+			console.log(id);
+		}
 
-    $(".m_save").html('저장완료');
-  }
+		form.submit();
+		$(".m_save").html('저장완료');
+	  }
 
   $(function() {
-    $("#memoTxt").on("keyup", function() {
+	  $(".memoTxt").each(function() {
+		$(this) .on("keyup", function() {
+			$(".m_save").text('자동 저장중');
+		}); 
+	  });
+    /*$(".memoTxt").on("keyup", function() {
       $(".m_save").text('자동 저장중');
-    });
+    });*/
+	$(".memoTxt").each(function() {
+		$(this) .on("focusout", function(e) {
+			let id = e.target.id;
 
-    $('#memoTxt').focusout(function() {
-      memoChk();
-    });
+			memoChk(id);
+		}); 
+	  });
+    
 
     $(".m_tab_btn > li").on("click",function(event){
 
@@ -177,15 +181,75 @@ if ($num) {
 	</ul>
 	<div class="m_tab_wrap">
 		<div class="m_tab_box">
-			<textarea name='memoTxt' id='memoTxt' class="memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt ?></textarea>
+		<?
+			$sql = "select * from wo_memo01 where userid='$GBL_USERID'";
+			$result = mysql_query($sql);
+			$num = mysql_num_rows($result);
+
+			if ($num) {
+			  $row = mysql_fetch_array($result);
+			  $memoTxt01 = $row['ment'];
+
+			  if ($memoTxt01) {
+				$memoTxt01 = str_replace("&nbsp;", " ", $memoTxt01);
+				$memoTxt01 = str_replace("&lt;", "<", $memoTxt01);
+				$memoTxt01 = str_replace("&gt;", ">", $memoTxt01);
+				$memoTxt01 = str_replace("&quot;", "\"", $memoTxt01);
+				$memoTxt01 = str_replace("&#124;", "\|", $memoTxt01);
+				$memoTxt01 = str_replace("<br><br>", "\r\n\r\n", $memoTxt01);
+				$memoTxt01 = str_replace("<BR>", "\r\n", $memoTxt01);
+			  }
+			}
+			?>
+			<textarea name='memoTxt01' id='memoTxt01' class="memoTxt memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt01 ?></textarea>
 			<div class="m_save" onclick="memoChk();"><span class="lnr lnr-pencil"></span>자동 저장중</div>
 		</div>
+		<?
+			$sql = "select * from wo_memo02 where userid='$GBL_USERID'";
+			$result = mysql_query($sql);
+			$num = mysql_num_rows($result);
+
+			if ($num) {
+			  $row = mysql_fetch_array($result);
+			  $memoTxt02 = $row['ment'];
+
+			  if ($memoTxt02) {
+				$memoTxt02 = str_replace("&nbsp;", " ", $memoTxt02);
+				$memoTxt02 = str_replace("&lt;", "<", $memoTxt02);
+				$memoTxt02 = str_replace("&gt;", ">", $memoTxt02);
+				$memoTxt02 = str_replace("&quot;", "\"", $memoTxt02);
+				$memoTxt02 = str_replace("&#124;", "\|", $memoTxt02);
+				$memoTxt02 = str_replace("<br><br>", "\r\n\r\n", $memoTxt02);
+				$memoTxt02 = str_replace("<BR>", "\r\n", $memoTxt02);
+			  }
+			}
+			?>
 		<div class="m_tab_box">
-			<textarea name='memoTxt' id='memoTxt' class="memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt ?></textarea>
+			<textarea name='memoTxt02' id='memoTxt02' class="memoTxt memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt02 ?></textarea>
 			<div class="m_save" onclick="memoChk();"><span class="lnr lnr-pencil"></span>자동 저장중</div>
 		</div>
+		<?
+			$sql = "select * from wo_memo03 where userid='$GBL_USERID'";
+			$result = mysql_query($sql);
+			$num = mysql_num_rows($result);
+
+			if ($num) {
+			  $row = mysql_fetch_array($result);
+			  $memoTxt03 = $row['ment'];
+
+			  if ($memoTxt03) {
+				$memoTxt03 = str_replace("&nbsp;", " ", $memoTxt03);
+				$memoTxt03 = str_replace("&lt;", "<", $memoTxt03);
+				$memoTxt03 = str_replace("&gt;", ">", $memoTxt03);
+				$memoTxt03 = str_replace("&quot;", "\"", $memoTxt03);
+				$memoTxt03 = str_replace("&#124;", "\|", $memoTxt03);
+				$memoTxt03 = str_replace("<br><br>", "\r\n\r\n", $memoTxt03);
+				$memoTxt03 = str_replace("<BR>", "\r\n", $memoTxt03);
+			  }
+			}
+			?>
 		<div class="m_tab_box">
-			<textarea name='memoTxt' id='memoTxt' class="memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt ?></textarea>
+			<textarea name='memoTxt03' id='memoTxt03' class="memoTxt memo_area scrollable-content" placeholder="메모입력"><?= $memoTxt03 ?></textarea>
 			<div class="m_save" onclick="memoChk();"><span class="lnr lnr-pencil"></span>자동 저장중</div>
 		</div>
 	</div>

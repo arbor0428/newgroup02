@@ -1,0 +1,40 @@
+APM 버젼업에 따른 참고사항
+
+[mysql]
+mysql 연결부분 => /module/class/class.DbCon.php 파일참고
+class.DbCon.php 파일 참고사항
+* mysqli_result 함수가 없어졌기 때문에 해당 함수를 선언
+* mysql 쿼리문내에 홑따옴표가 포함된 경우 장애가 발생하기 때문에 sql_injection 함수를 적용
+
+(변경된 함수)
+mysql_query($result) => mysqli_query($dbc,$result)
+mysql_num_rows($result) => mysqli_num_rows($result)
+mysql_fetch_array($result) => mysqli_fetch_array($result)
+mysql_result($result) => mysqli_result($result)
+
+
+[php]
+1. 세션삭제(로그아웃부분)
+session_unregister("ses_iweb_id") => unset($_SESSION["ses_iweb_id"])
+
+2. 배열 인자값이 텍스트일 경우 따옴표처리
+$_SERVER[HTTP_HOST] => $_SERVER['HTTP_HOST']
+
+3. 변경된 함수
+preg_match($ext, $exe) => preg_match('/'.$ext.'/i', $exe)
+eregi_replace => str_replace
+eregi( = >preg_match(
+$PHP_SELF => $_SERVER['PHP_SELF'];
+
+4. 변수전송
+전송받는 페이지내 $_POST or $_GET으로 변수를 받아야하며,
+일괄 처리를 위해 /module/login/head.php 및 /module/class/class.DbCon.php 에서 아래와 같이 처리함
+@extract($_GET); 
+@extract($_POST); 
+@extract($_SERVER);
+
+5. utf-8 캐릭터셋 적용으로 인해 iconv 함수를 이용한 캐릭터셋 변환 불필요
+
+6. 문자열 자르기 (Shorten_String)
+ - 기존 (한글:2byte, 영문:1byte)
+ - 현재 (한글,영문:1byte)

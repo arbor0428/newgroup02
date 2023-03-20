@@ -237,10 +237,10 @@ function monthNum2($date1, $date2){
 				<span class="lnr lnr-chevron-down"></span>
 				<span class="lnr lnr-chevron-up"></span>
 				<ul class="dep2">
-					<li><a href="/timechk/up_index.php">근태현황</a></li>
-					<li><a href="/job/index.php">업무현황</a></li>
-					<li><a href="/daylog/up_index.php">업무일지</a></li>
-					<li><a href="/member/up_index.php">인사관리</a></li>
+					<li><a href="/new/timechk/up_index.php">근태현황</a></li>
+					<li><a href="/new/job/up_index.php">업무현황</a></li>
+					<li><a href="/new/daylog/up_index.php">업무일지</a></li>
+					<li><a href="/new/member/up_index.php">인사관리</a></li>
 				</ul>
 			</li>
 			<li>
@@ -251,14 +251,14 @@ function monthNum2($date1, $date2){
 				<span class="lnr lnr-chevron-down"></span>
 				<span class="lnr lnr-chevron-up"></span>
 				<ul class="dep2">
-					<li><a href="/ing01/up_index.php">영업현황</a></li>
-					<li><a href="/ing02/up_index.php">에이젼시현황</a></li>
-					<li><a href="/ing02/up_index02.php">결제청구목록</a></li>
-					<li><a href="/ing02/up_index.php?f_status=부분제작">부분제작</a></li>
-					<li><a href="/bus01/up_index.php">거래처관리</a></li>
-					<li><a href="/bus02/up_index.php">참고업체현황</a></li>
-					<li><a href="/searchad/up_index.php">광고관리</a></li>					    
-    			<li><a href="/lgu/up_index.php">LGU+</a></li>
+					<li><a href="/new/ing01/up_index.php">영업현황</a></li>
+					<li><a href="/new/ing02/up_index.php">에이젼시현황</a></li>
+					<li><a href="/new/ing02/up_index02.php">결제청구목록</a></li>
+					<li><a href="/new/ing02/up_index.php?f_status=부분제작">부분제작</a></li>
+					<li><a href="/new/bus01/up_index.php">거래처관리</a></li>
+					<li><a href="/new/bus02/up_index.php">참고업체현황</a></li>
+					<li><a href="/new/searchad/up_index.php">광고관리</a></li>					    
+    			<li><a href="/new/lgu/up_index.php">LGU+</a></li>
 				</ul>
 			</li>
 			<li>
@@ -271,10 +271,11 @@ function monthNum2($date1, $date2){
 				<ul class="dep2">
 					<!-- <li><a href="/approval/up_index.php">전자결재(구)</a></li> -->
 					<li><a href="/new/bill/index.php">전자결재(신)</a></li>
-					<li><a href="/new/bill/wirte.php">견적서</a></li>
+					<li><a href="/new/bill/write.php">견적서</a></li>
 					<li><a href="/new/bill/transactionStatement.php">거래명세서</a></li>
 					<li><a href="/new/bill/payment.php">대금청구서</a></li>
 					<li><a href="/new/bill/transition.php">인수인계서</a></li>
+					<li><a href="/new/bill/order.php">구매품의서</a></li>
 				</ul>
 			</li>
 			

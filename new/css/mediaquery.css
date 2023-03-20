@@ -168,7 +168,7 @@
 		left: -100%;
 		width: 70%;
 		height: 100%;
-		background-color:#003081;
+		background-color:#1a60d7;
 		border-radius: 0 40px 40px 0;
 		overflow: hidden;
 		transition: all .5s;
@@ -213,12 +213,36 @@
 	.pc_profile_wrap {
 		display:none;
 	}
+	.btn_primary02 {
+		background-color: #1a60d7;
+	}
+	.dayoff_wrap p .re_amt {
+		background-color: transparent; 
+		padding: 2px 0;
+		font-size: 26px;
+		color: #fff;
+	}
 	.main_content_mid .m_profile_wrap {
 		display:block;
 	}
 	.m_profile_wrap .profile_box {
-		background-color: #003081;
-		border-radius: 4px;
+		background-color: #1a60d7;
+		border-radius: 10px;
+		padding: 10px 20px;
+	}
+	.m_profile_wrap .profile_box .commute_wrap {
+		display: none;
+	}
+	.dayoff_wrap {
+		padding: 5px;
+		border-bottom: none;
+	}
+	.m_profile_wrap .profile_wrap {
+		justify-content: center;
+	}
+	.m_profile_wrap .profile_info_wrap {
+		margin-left: 20px;
+		width: auto;
 	}
 	.m_profile_wrap .profile_box .profile_info .m_pro_flex {
 		margin-top: 5px; 
@@ -238,6 +262,7 @@
 	}
 	.search_box input {
 		padding: 0 10px;
+		height: 45px;
 	}
 	.mini_alert_wrap:after {
 		margin: 0 5px;
@@ -357,7 +382,7 @@
 		margin-bottom: 20px;
 		display: block;
 		position: relative;
-		height: 40px;
+		height: 45px;
 	}
 	.search_box input {
 		background-color: #cedeff;
@@ -379,11 +404,14 @@
 	}
 	.book_mark_box {
 		font-size: 10px;
+		background-color: #1a60d7;
 	}
 }
 
 @media (max-width:570px){ 
-
+	.logo {
+		height: 74px;
+	}
 	.book_mark_wrap {
 		width: 570px;
 	}

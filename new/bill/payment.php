@@ -314,7 +314,7 @@
 </div>
 
 <script>
-$('.print_btn').click(function () {
+	$('.print_btn').click(function () {
 			window.print();
 	});
 
@@ -423,7 +423,7 @@ $('.print_btn').click(function () {
 	function transComma() {
 		let val = event.target.value;
 		//console.log(val);
-		val = val.replace(",", "");
+		val = val.replace(/,/gi, "");
 		val = Number(val);
 
 		event.target.value = comma(val);
@@ -448,7 +448,7 @@ $('.print_btn').click(function () {
 				price = $("#" + id).parent().siblings().children(".bill_price").val();
 				valName = "bill";
 
-				price = price.replace(",", "");
+				price = price.replace(/,/gi, "");
 				// price = price.replace("원", "");
 				price = Number(price);
 
@@ -496,7 +496,7 @@ $('.print_btn').click(function () {
 
 		for (i = 0; i < $(".price").length; i++) {
 			let prices = $(".price").eq(i).val();
-			prices = prices.replace(",", "");
+			prices = prices.replace(/,/gi, "");
 			// prices = prices.replace("원", "");
 			prices = Number(prices);
 
@@ -621,7 +621,7 @@ $('.print_btn').click(function () {
 	
 		let id = event.target.id;
 let price ='';
-		value = value.replace(",", "");
+		value = value.replace(/,/gi, "");
 		value = value.replace("년", "");
 		value = value.replace("개월", "");
 

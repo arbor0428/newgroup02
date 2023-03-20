@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Document</title>
+    <script>
+		//도큐먼트 레디
+        $(function(){
+
+			//check1번 아이디 속성, label 연결할떄는 for 사용, change 교체
+            $('#check1').change(function(){
+				
+				//abc라는 변수를만들어서 체크박스에 체크된 상태를 abc로 정의했다
+                let abc = $('input:checkbox[id="check1"]').is(":checked");
+				
+
+                if (abc == true) {
+                    $('#pwNum').attr('type','text');
+                }else{
+                    $('#pwNum').attr('type','password');
+                }
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div>
+        <input type="password" name="" id="pwNum">
+        <input type="checkbox" id="check1">
+        <label for="check1">보이기</label>
+    </div>
+</body>
+</html>
