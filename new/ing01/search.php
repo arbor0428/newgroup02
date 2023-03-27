@@ -27,36 +27,52 @@ function set_reset(){
 </script>
 
 
+<div class="search_container">
+	<div class="search_wrap">
+		<div class="search_row">
+			<div class="search_th">상호</div>
+			<div class="search_td">	<input type='text' name='f_company' style='width:75%' value='<?=$f_company?>'>	</div>
+		</div>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%' class='gTable2'>
-	<tr> 
-		<th width="17%">상호</th>
-		<td width="33%"><input type='text' name='f_company' style='width:75%' value='<?=$f_company?>'></td>
-		<th width="17%">업체 담당자</th>
-		<td width="33%"><input type='text' name='f_person' style='width:75%' value='<?=$f_person?>'></td>
-	</tr>
-	<tr> 
-		<th>이메일</th>
-		<td><input type='text' name='f_email' style='width:75%' value='<?=$f_email?>'></td>
-		<th>추천자</th>
-		<td><input type='text' name='f_fax' style='width:75%' value='<?=$f_fax?>'></td>
-	</tr>
-	<tr> 
-		<th>일반전화</th>
-		<td><input type='text' name='f_tel' style='width:75%' value='<?=$f_tel?>'></td>
-		<th>휴대전화</th>
-		<td><input type='text' name='f_hp' style='width:75%' value='<?=$f_hp?>'></td>
-	</tr>
-	<tr> 
-		<th>사이트명</th>
-		<td><input type='text' name='f_site_name' style='width:75%' value='<?=$f_site_name?>'></td>
-		<th>보유도메인</th>
-		<td><input type='text' name='f_domain' style='width:75%' value='<?=$f_domain?>'></td>
-	</tr>
-</table>
+		<div class="search_row">
+			<div class="search_th">업체 담당자</div>
+			<div class="search_td"><input type='text' name='f_person' style='width:75%' value='<?=$f_person?>'>	</div>
+		</div>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-	<tr>
-		<td height='50' colspan='4' align='center'><a href="javascript:set_search();"><img src='/images/common/search.gif'></a>&nbsp;<a href="javascript:set_reset();"><img src='/images/common/reset.gif'></a></td>
-	</tr>
-</table>
+		<div class="search_row">
+			<div class="search_th">이메일</div>
+			<div class="search_td"><input type='text' name='f_email' style='width:75%' value='<?=$f_email?>'></div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">추천자</div>
+			<div class="search_td"><input type='text' name='f_fax' style='width:75%' value='<?=$f_fax?>'></div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">일반전화</div>
+			<div class="search_td"><input type='text' name='f_tel' style='width:75%' value='<?=$f_tel?>'></div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">휴대전화</div>
+			<div class="search_td"><input type='text' name='f_hp' style='width:75%' value='<?=$f_hp?>'></div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">사이트명</div>
+			<div class="search_td"><input type='text' name='f_site_name' style='width:75%' value='<?=$f_site_name?>'></div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">보유도메인</div>
+			<div class="search_td"><input type='text' name='f_domain' style='width:75%' value='<?=$f_domain?>'></div>
+		</div>
+
+	</div>
+</div>
+
+<div class="serach_btn-wrap">
+	<a href="javascript:set_search();" class='btn_primary03'>검색</a>
+	<a href="javascript:set_reset();" class='btn_primary03'>초기화</a>
+</div>

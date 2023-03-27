@@ -50,14 +50,17 @@ function job_search(job){
 	?>
 
 	<div class="mobile_col_wrap">
-		<div class="content_wrap">  
+		<div class="content_wrap mobile_sub_wrap">  
 
-			<div class="main_content_left_sub">
-				<div class="new_tbl_wrap">
-					<div class="list_top">
+			<div class="main_content_left_sub mobile_sub">
+					<div class="subPage_tit_wrap dp_sb dp_c">
 						<div class="sub_title" ><?=$subtit?></div>
-						<?if($type=='list'){?><a href='up_index.php?type=write'><span class="material-symbols-outlined">add</span></a><?}?>
+						<?if($type=='list'){?><a href='up_index.php?type=write' class="btn_primary02">등록</a><?}?>
 					</div>					
+					
+
+					<div class="subPage_tbl_wrap">
+
 						<?
 							switch($type){									
 								case 'list' :
@@ -75,11 +78,10 @@ function job_search(job){
 
 							}
 						?>
-				</div>
+					</div>
 				<!--//테이블 끝 -->
 
 			</div>
-
 					
 			<?
 				include '../rightContent.php';

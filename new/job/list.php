@@ -166,7 +166,32 @@ function chkEnd(){
 </script>
 
 
+<style>
+	.bco01{height:14px; padding:2px; border-radius:3px; background:#acc000; color:#fff;}
+	.bco02{height:14px; padding:2px; border-radius:3px; background:#6fbc00; color:#fff;}
+	.bco03{height:14px; padding:2px; border-radius:3px; background:#00b361; color:#fff;}
+	.bco04{height:14px; padding:2px; border-radius:3px; background:#00b2c7; color:#fff;}
+	.bco05{height:14px; padding:2px; border-radius:3px; background:#00a0eb; color:#fff;}
+	.bco06{height:14px; padding:2px; border-radius:3px; background:#0071d0; color:#fff;}
+	.bco07{height:14px; padding:2px; border-radius:3px; background:#ffa800; color:#fff;}
+	.bco08{height:14px; padding:2px; border-radius:3px; background:#ff6c00; color:#fff;}
+	.bco09{height:14px; padding:2px; border-radius:3px; background:#ff5432; color:#fff;}
+	.bco10{height:14px; padding:2px; border-radius:3px; background:#a1a1a1; color:#fff;}
+	.bco11{height:14px; padding:2px; border-radius:3px; background:#de712e; color:#fff;}
 
+	.bco01:hover{background:#8fa000;cursor:pointer;}
+	.bco02:hover{background:#559000;cursor:pointer;}
+	.bco03:hover{background:#018549;cursor:pointer;}
+	.bco04:hover{background:#008898;cursor:pointer;}
+	.bco05:hover{background:#0074aa;cursor:pointer;}
+	.bco06:hover{background:#00457f;cursor:pointer;}
+	.bco07:hover{background:#9d6700;cursor:pointer;}
+	.bco08:hover{background:#d15900;cursor:pointer;}
+	.bco09:hover{background:#90230e;cursor:pointer;}
+	.bco10:hover{background:#666;cursor:pointer;}
+	.bco11:hover{background:#8d4417;cursor:pointer;}
+
+</style>
 <!-- 검색 -->
 <form name='form1' method='post' action='<?=$PHP_SELF?>'>
 
@@ -176,108 +201,119 @@ function chkEnd(){
 <input type='hidden' name='record_start' value='<?=$record_start?>'>
 <input type='hidden' name='next_url' value='<?=$PHP_SELF?>'>
 
+<div class="search_container">
+	<div class="search_wrap">
+		<div class="search_row">
+			<div class="search_th">업무종류</div>
+			<div class="search_td dp_f dp_c">	
+				<div class="dp_f dp_c" style="margin-right: 10px;">
+					<input type='radio' name='f_search' value='업무' <?if($f_search=='' || $f_search=='업무') echo 'checked';?> onclick="set_tab('1');">나의 업무현황
+				</div>
+				<div class="dp_f dp_c" style="margin-right: 10px;">
+					<input type='radio' name='f_search' value='요청' <?if($f_search=='요청') echo 'checked';?> onclick="set_tab('2');">내가요청한 업무
+				</div>
+				<div class="dp_f dp_c">
+					<input type='radio' name='f_search' value='전체' <?if($f_search=='전체') echo 'checked';?> onclick="set_tab('3');">전체 업무현황
+				</div>
+			</div>
+		</div>
+			
+		<div class="search_row">
+			<div class="search_th">프로젝트명</div>
+			<div class="search_td">	
+				<input type='text' name='f_project' style='width:75%' value='<?=$f_project?>' onkeypress='is_Key();'>
+			</div>
+		</div>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%' class='gTable2'>
-	<tr>
-		<th>업무종류</th>
-		<td colspan='3'>
-			<input type='radio' name='f_search' value='업무' <?if($f_search=='' || $f_search=='업무') echo 'checked';?> onclick="set_tab('1');">나의 업무현황&nbsp;&nbsp;
-			<input type='radio' name='f_search' value='요청' <?if($f_search=='요청') echo 'checked';?> onclick="set_tab('2');">내가요청한 업무&nbsp;&nbsp;
-			<input type='radio' name='f_search' value='전체' <?if($f_search=='전체') echo 'checked';?> onclick="set_tab('3');">전체 업무현황
-		</td>
-	</tr>
-	<tr> 
-		<th width="17%">프로젝트명</th>
-		<td width="33%"><input type='text' name='f_project' style='width:75%' value='<?=$f_project?>' onkeypress='is_Key();'></td>
-		<th width="17%">제목</th>
-		<td width="33%"><input type='text' name='f_title' style='width:75%' value='<?=$f_title?>' onkeypress='is_Key();'></td>
-	</tr>
-	<tr> 
-		<th>내용</th>
-		<td colspan='3'><input type='text' name='f_ment' style='width:75%' value='<?=$f_ment?>' onkeypress='is_Key();'></td>
-	</tr>
-	<tr> 
-		<th>담당자</th>
-		<td>
-			<select name='f_re_name'>
-				<option value=''>===</option>
-			<?
-				for($i=0; $i<count($arr_member); $i++){
-			?>
-				<option value='<?=$arr_member[$i]?>' <?if($f_re_name==$arr_member[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
-			<?
-				}
-			?>
-			</select>
-		</td>
-		<th>요청자</th>
-		<td>
-			<select name='f_name'>
-				<option value=''>===</option>
-			<?
-				for($i=0; $i<count($arr_member); $i++){
-			?>
-				<option value='<?=$arr_member[$i]?>' <?if($f_name==$arr_member[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
-			<?
-				}
-			?>
-			</select>
-		</td>
-	</tr>
-	<tr> 
-		<th>진행상태</th>
-		<td colspan='3'>
+		<div class="search_row">
+			<div class="search_th">제목</div>
+			<div class="search_td">	
+				<input type='text' name='f_title' style='width:75%' value='<?=$f_title?>' onkeypress='is_Key();'>
+			</div>
+		</div>
 
+		<div class="search_row">
+			<div class="search_th">내용</div>
+			<div class="search_td">	
+				<input type='text' name='f_ment' style='width:75%' value='<?=$f_ment?>' onkeypress='is_Key();'>
+			</div>
+		</div>
 
-			<table cellpadding='0' cellspacing='0' border='0'>
-				<tr>
+		<div class="search_row">
+			<div class="search_th">담당자</div>
+			<div class="search_td">	
+				<select name='f_re_name'>
+					<option value=''>===</option>
+					<?
+						for($i=0; $i<count($arr_member); $i++){
+					?>
+						<option value='<?=$arr_member[$i]?>' <?if($f_re_name==$arr_member[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
+					<?
+						}
+					?>
+				</select>
+			</div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">요청자</div>
+			<div class="search_td">	
+				<select name='f_name'>
+					<option value=''>===</option>
 				<?
-					$f=1;
-					foreach($stateArr as $k => $v){
-						$stateTxt = $k;
-						$cName = $v;
-
-						if($f == 1)	$pStyle = "";
-						else			$pStyle = "style='padding:0 0 0 10px;'";
-
-						$fTxt = 'f_state'.sprintf('%02d',$f);
-
-
+					for($i=0; $i<count($arr_member); $i++){
 				?>
-					<td <?=$pStyle?>>
-						<div class="squaredThree">
-							<input type="checkbox" value="<?=$stateTxt?>" id="pT<?=$f?>" name="<?=$fTxt?>" <?if(${$fTxt} == $stateTxt){echo 'checked';}?>>
-							<label for="pT<?=$f?>"></label>
-						</div>
-						<p style='margin:3px 0 0 25px;'><span class='<?=$cName?>'><?=$stateTxt?></span></p>
-					</td>
+					<option value='<?=$arr_member[$i]?>' <?if($f_name==$arr_member[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
 				<?
-						$f++;
 					}
 				?>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
+				</select>
+			</div>
+		</div>
+
+			<div class="search_row" style="width: 100%;">
+			<div class="search_th wid15">진행상태</div>
+				<div class="search_td flex_row">	
+					<?
+						$f=1;
+						foreach($stateArr as $k => $v){
+							$stateTxt = $k;
+							$cName = $v;
+
+							if($f == 1)	$pStyle = "";
+							else			$pStyle = "style='padding:0 0 0 10px;'";
+
+							$fTxt = 'f_state'.sprintf('%02d',$f);
+						?>
+						<div <?=$pStyle?>>
+							<div class="squaredThree">
+								<input type="checkbox" value="<?=$stateTxt?>" id="pT<?=$f?>" name="<?=$fTxt?>" <?if(${$fTxt} == $stateTxt){echo 'checked';}?>>
+								<label for="pT<?=$f?>"></label>
+							</div>
+							<p style='margin:3px 0 0 25px;'><span class='<?=$cName?>'><?=$stateTxt?></span></p>
+						</div>
+					<?
+							$f++;
+						}
+					?>
+			</div>
+		</div>
+
+	</div>
+<div>
 
 
 <!-- 검색버튼영역 -->
-<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-	<tr>
-		<td height='50' colspan='4' align='center'>
-			<a href="javascript:set_search();"><img src='/images/common/search.gif'></a>
-			&nbsp;<a href="javascript:set_reset();"><img src='/images/common/reset.gif'></a>
-		</td>
-	</tr>
-</table>
 
-
+<div class="serach_btn-wrap dp_f dp_c dp_cc">
+	<a href="javascript:set_search();" class="btn_primary03">검색</a>
+	<a href="javascript:set_reset();" class="btn_primary03">초기화</a>
+</div>
 
 
 
 <div class="list_btn_wrap dp_c dp_sb">
-	<div><a href="javascript:chkEnd();" class="small cbtn black">완료처리</a></div>
+	<div><a href="javascript:chkEnd();" class="btn_primary02">완료처리</a></div>
 	<div class="work_btn_wrap dp_c dp_sb">
 		<div style='padding:0 15px;cursor:pointer;border:1px solid #ccc;' align='center' id='tab01' <?if($f_search=='업무'){echo "bgcolor='#efefef'";}else{echo "onclick=set_tab('1');";}?>>나의 업무현황</div>
 		<div style='padding:0 15px;cursor:pointer;border:1px solid #ccc;' align='center' id='tab02' <?if($f_search=='요청'){echo "bgcolor='#efefef'";}else{echo "onclick=set_tab('2');";}?>>내가요청한 업무</div>
@@ -425,4 +461,5 @@ function chkEnd(){
 <?
 	$fName = 'form1';
 	include '../pageNum.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
 ?>

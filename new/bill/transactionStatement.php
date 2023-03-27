@@ -24,6 +24,18 @@
 		.no_print, .none_print {
 			display: none !important;
 		}
+			.content_head {
+				display: none;
+			}
+			.wrap {
+				width: 100%;
+			}
+			.bill_content_wrap {
+				width: 100%;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
 		select {
 			border: none;
 			-webkit-appearance: none; /* for chrome */
@@ -79,141 +91,150 @@
 
 	}
 </style>
-<div class="bill">
-	<img src="/images/iweblogo.jpg" class="bill_logo" />
-	<button class="print_btn no_print">인쇄</button>
-	<div class="bill_title">
-		<input
-			type="text"
-			name="biil_title"
-			value="거래명세서"
-			placeholder=""
-		/>
-	</div>
+<div class="wrap bill_wrap">
+	<?
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
+	?>
 
-	<div class="bill_content">
-		<div class="bill_top_content">
-			<table class="bill_table_modify">
-				<tr>
-					<td>
-						<input type="text" value="下記와 같이 去來합니다." />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" placeholder="업체이름 담당자 貴下" />
-					</td>
-				</tr>
-				<tr>
-					<td>
-						<input type="text" placeholder="홈페이지 연장 대금" />
-					</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<th rowspan="5" style="writing-mode: vertical-lr; padding: 5px">
-						공급자
-					</th>
-				</tr>
-				<tr style="border-top: none">
-					<th width="100px">등록번호</th>
-					<td colspan="3">
-						<input type="text" id="bill_num" />
-					</td>
-				</tr>
-				<tr>
-					<th>상호</th>
-					<td width="130px">아이웹</td>
-					<th>성명</th>
-					<td>조준</td>
-				</tr>
-
-				<tr>
-					<th>사업장소재</th>
-					<td colspan="3">
-						서울시 마포구 매봉산로37, DMC산학협력연구센터 605호
-					</td>
-				</tr>
-
-				<tr>
-					<th>업태</th>
-					<td>서비스업</td>
-					<th>종목</th>
-					<td>소프트웨어 개발</td>
-				</tr>
-			</table>
+ <div class="bill_content_wrap"> 
+	<div class="bill">
+		<img src="/images/iweblogo.jpg" class="bill_logo" />
+		<button class="print_btn no_print">인쇄</button>
+		<div class="bill_title">
+			<input
+				type="text"
+				name="biil_title"
+				value="거래명세서"
+				placeholder=""
+			/>
 		</div>
 
-		<div class="bill_bottom_content">
-			<div class="row_add_wrap no_print">
-				<button id="btn_row_add2" data-name="row_add2">행 추가 +</button>
+		<div class="bill_content">
+			<div class="bill_top_content">
+				<table class="bill_table_modify">
+					<tr>
+						<td>
+							<input type="text" value="下記와 같이 去來합니다." />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" placeholder="업체이름 담당자 貴下" />
+						</td>
+					</tr>
+					<tr>
+						<td>
+							<input type="text" placeholder="홈페이지 연장 대금" />
+						</td>
+					</tr>
+				</table>
+				<table>
+					<tr>
+						<th rowspan="5" style="writing-mode: vertical-lr; padding: 5px">
+							공급자
+						</th>
+					</tr>
+					<tr style="border-top: none">
+						<th width="100px">등록번호</th>
+						<td colspan="3">
+							<input type="text" id="bill_num" />
+						</td>
+					</tr>
+					<tr>
+						<th>상호</th>
+						<td width="130px">아이웹</td>
+						<th>성명</th>
+						<td>조준</td>
+					</tr>
+
+					<tr>
+						<th>사업장소재</th>
+						<td colspan="3">
+							서울시 마포구 매봉산로37, DMC산학협력연구센터 605호
+						</td>
+					</tr>
+
+					<tr>
+						<th>업태</th>
+						<td>서비스업</td>
+						<th>종목</th>
+						<td>소프트웨어 개발</td>
+					</tr>
+				</table>
 			</div>
 
-			<table class="bill_table_modify02" id="bill_tbl">
-				<tr>
-					<th style="width: 20%">품목</th>
-					<th style="width: 5%">수량</th>
-					<th style="width: 10%">단가(원)</th>
-					<th style="width: 10%">부가세(원)</th>
-					<th style="width: 15%">합계금액(원)</th>
-					<th style="width: 0%"></th>
-				</tr>
+			<div class="bill_bottom_content">
+				<div class="row_add_wrap no_print">
+					<button id="btn_row_add2" data-name="row_add2">행 추가 +</button>
+				</div>
 
-				<tr id="bill_clone_tr">
-					<td>
-						<textarea
-							onkeydown="resize(this)"
-							onkeyup="resize(this)"
-							id="bill_sort1"
-						></textarea>
-					</td>
-					<td>
-						<input
-							type="text"
-							id="bill_quantity1"
-							class="bill_quantity"
-							onchange="quantityChange(id)"
-						/>
-					</td>
-					<td>
-						<input
-							type="text"
-							id="bill_price1"
-							class="bill_price"
-							onchange="transComma(); priceChange(id);"
-						/>
-					</td>
-					<td>
-						<input type="text" id="bill_surtax1" class="bill_surtax" />
-					</td>
-					<td>
-						<input
-							type="text"
-							id="bill_total_price1"
-							class="bill_total_price price"
-						/>
-					</td>
-					<td id="bill_etc1"></td>
-				</tr>
-			</table>
+				<table class="bill_table_modify02" id="bill_tbl">
+					<tr>
+						<th style="width: 20%">품목</th>
+						<th style="width: 5%">수량</th>
+						<th style="width: 10%">단가(원)</th>
+						<th style="width: 10%">부가세(원)</th>
+						<th style="width: 15%">합계금액(원)</th>
+						<th style="width: 0%"></th>
+					</tr>
+
+					<tr id="bill_clone_tr">
+						<td>
+							<textarea
+								onkeydown="resize(this)"
+								onkeyup="resize(this)"
+								id="bill_sort1"
+							></textarea>
+						</td>
+						<td>
+							<input
+								type="text"
+								id="bill_quantity1"
+								class="bill_quantity"
+								onchange="quantityChange(id)"
+							/>
+						</td>
+						<td>
+							<input
+								type="text"
+								id="bill_price1"
+								class="bill_price"
+								onchange="transComma(); priceChange(id);"
+							/>
+						</td>
+						<td>
+							<input type="text" id="bill_surtax1" class="bill_surtax" />
+						</td>
+						<td>
+							<input
+								type="text"
+								id="bill_total_price1"
+								class="bill_total_price price"
+							/>
+						</td>
+						<td id="bill_etc1"></td>
+					</tr>
+				</table>
+			</div>
+		</div>
+
+		<div class="bill_pay">
+			<div class="bill_total">
+				<p>합계</p>
+				<input type="text" id="bill_total_input" style="width: 15%" />
+				<p>(부가세포함)</p>
+			</div>
+		</div>
+
+		 <div class="bill_footer">
+			<h1>
+				주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
+				<span id="dojang" style="">(인)</span>
+			</h1>
 		</div>
 	</div>
+</div>
 
-	<div class="bill_pay">
-		<div class="bill_total">
-			<p>합계</p>
-			<input type="text" id="bill_total_input" style="width: 15%" />
-			<p>(부가세포함)</p>
-		</div>
-	</div>
-
-	 <div class="bill_footer">
-		<h1>
-			주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
-			<span id="dojang" style="">(인)</span>
-		</h1>
-	</div>
 </div>
 
 <script>

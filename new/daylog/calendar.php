@@ -95,7 +95,7 @@ function Sel_date(y,m,d){
 
 
 
-<table border="0" cellspacing="0" cellpadding="0" align='center'>
+<table border="0" cellspacing="0" cellpadding="0" align='center' style="width: 100%;">
 	<tr>
 		<td align='center'>
 		<!-- 년, 월 표기 -->
@@ -132,7 +132,7 @@ function Sel_date(y,m,d){
 
 
 
-			<table width="1200" style="border-collapse:collapse;text-align:center;margin:5px 0;" border="1" bordercolor="e7e7e7" frame="hsides" align="center" cellpadding="2" cellspacing="0" class="sc">
+			<table  style="width: 100%; border-collapse:collapse;text-align:center;margin:5px 0;" border="1" bordercolor="e7e7e7" frame="hsides" align="center" cellpadding="2" cellspacing="0" class="sc">
 				<tr height='30'>
 					<td style="color:<?=$s_font_color01?>;">일</td>
 					<td>월</td>

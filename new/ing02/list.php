@@ -217,7 +217,7 @@ function reg_write(uid){
 	include 'search.php';
 ?>
 
-
+<div class="mobile_scroll">
 <table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
 	<tr>
 		
@@ -444,9 +444,11 @@ if($trh){
 ?>
 </table>
 
+</div>
 
 
 <?
 	$fName = 'form1';
 	include '../pageNum.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
 ?>

@@ -52,26 +52,86 @@ function user_sel(){
 	?>
 
 	<div class="mobile_col_wrap">
-		<div class="content_wrap">  
+		<div class="content_wrap mobile_sub_wrap">  
 
-			<div class="main_content_left_sub">
+			<div class="main_content_left_sub mobile_sub">
+
+				<form name='frm_day' method='post' action='./proc.php'>
+				<input type='hidden' name='type' value=''>
+				<input type='hidden' name='userid' value='<?=$GBL_USERID?>'>
+				<input type='hidden' name='name' value='<?=$GBL_NAME?>'>
+				<input type='hidden' name='next_url' value='<?=$PHP_SELF?>'>
+				<input type='hidden' name='uid' value=''>
+				<input type='hidden' name='s_year' value=''>
+				<input type='hidden' name='s_month' value=''>
+				<input type='hidden' name='s_day' value=''>
+				<input type='hidden' name='cur_y' value='<?=$cur_y?>'>
+				<input type='hidden' name='cur_m' value='<?=$cur_m?>'>
+				<input type='hidden' name='cur_d' value='<?=$cur_d?>'>
+
+				<div class="subPage_tit_wrap dp_sb dp_c">
+					<p class="subPage_tit"><?=$subtit?></p>
+					<div class="dp_f dp_c">
+						<a href="javascript:onWriteForm('1');" class="btn_primary02" style="margin-right: 10px;">등록</a>
+						<?
+							if($GBL_MTYPE == 'A' || $GBL_MTYPE == 'S'){	//관리자
+						?>
+							<select name='s_name' onchange='user_sel();'>
+							<?
+								for($i=0; $i<count($arr_member); $i++){
+									if(!array_key_exists($arr_userid[$i],$laborUarr)){
+							?>
+								<option value='<?=$arr_userid[$i]?>' <?if($s_name==$arr_userid[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
+							<?
+									}
+								}
+							?>
+							</select>
+							<?
+								}
+							?>
+					</div>
+				</div>
 
 
-				<table border="0" cellspacing="0" cellpadding="0" align='center'  style="width: 100%;">
+					<?
+						//업무등록
+						include 'log_write.php';
+					?>
 
 
-					<form name='frm_day' method='post' action='./proc.php'>
-					<input type='hidden' name='type' value=''>
-					<input type='hidden' name='userid' value='<?=$GBL_USERID?>'>
-					<input type='hidden' name='name' value='<?=$GBL_NAME?>'>
-					<input type='hidden' name='next_url' value='<?=$PHP_SELF?>'>
-					<input type='hidden' name='uid' value=''>
-					<input type='hidden' name='s_year' value=''>
-					<input type='hidden' name='s_month' value=''>
-					<input type='hidden' name='s_day' value=''>
-					<input type='hidden' name='cur_y' value='<?=$cur_y?>'>
-					<input type='hidden' name='cur_m' value='<?=$cur_m?>'>
-					<input type='hidden' name='cur_d' value='<?=$cur_d?>'>
+					<?
+						//등록된 업무일지
+						include 'day_log.php';
+					?>
+
+
+					<?
+						//달력
+						include 'calendar.php';
+					?>
+
+				</form>
+
+			</div>
+
+					
+			<?
+				include '../rightContent.php';
+			?>
+			
+		</div>
+		<!-- // content_wrap -->
+
+
+	</div>
+</div>
+
+
+
+<!-- 				<table border="0" cellspacing="0" cellpadding="0" align='center'  style="width: 100%;">
+
+
 
 						<tr>
 							<td style='padding-top:10px;padding-bottom:10px;'>
@@ -138,20 +198,4 @@ function user_sel(){
 						</tr>
 
 				</table>
-
-				</form>
-
-
-			</div>
-
-					
-			<?
-				include '../rightContent.php';
-			?>
-			
-		</div>
-		<!-- // content_wrap -->
-
-
-	</div>
-</div>
+ -->

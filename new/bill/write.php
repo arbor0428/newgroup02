@@ -21,12 +21,25 @@
 	@media print {
 	
 		body { 
-			background: none;
+			background: #fff;
 			font-size: 12px;
 		}
 		.no_print, .none_print {
 			display: none !important;
 		}
+			.content_head {
+				display: none;
+			}
+			.wrap {
+				width: 100%;
+				background: #fff !important;
+			}
+			.bill_content_wrap {
+				width: 100%;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
 		select {
 			border: none;
 			-webkit-appearance: none; /* for chrome */
@@ -49,6 +62,11 @@
 			margin: -80px 0 0;
 			font-size: 12px;
 		}
+		.bill_pay {
+			margin-bottom: 20px;
+		  margin-top: 10px !important;
+			gap: 0px;
+		}
 		.bill_top_content table th,
 		.bill_bottom_content table th,
 		.bill_top_content table td ,
@@ -63,14 +81,21 @@
 		.bill_title input[type="text"]{
 			font-size: 24px;
 		}
-		.bill_total, .bill_custom ,
+		.bill_title {
+			margin-bottom: 30px;
+		}
+		.bill_total, 
+		.bill_discount,
+		.bill_vat,
+		.bill_custom ,
 		.bill_total input[type="text"], 
+		.bill_discount input[type="text"], 
+		.bill_vat input[type="text"], 
 		.bill_custom input[type="text"],
 		.am input[type="text"],
 		.bill_bottom_content input[type="text"],
 		.bill_bottom_content textarea{
 			font-size: 12px;
-
 		}
 		.bill_bottom_content input[type="text"]{
 		text-align: left;
@@ -83,14 +108,33 @@
 			margin-top:50px;
 		}
 		.bill_footer {
-			margin: 30px auto 0;
+			margin:50px auto ;
+			background-color: #fff;
 		}
 		#dojang {
 			background: none;
 		}
+		.cutoff_btn {
+			display: none;
+		}
+		.am table th, .am table th {
+			padding: 10px !important;
+		}
+		.am table td {
+			padding: 10px 0 !important;
+		}
+		.bill input[type="text"] {
+			height: 25px;
+		}
 	}
 </style>
- <div class="content_wrap"> 
+<div class="wrap bill_wrap">
+
+	<?
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
+	?>
+
+ <div class="bill_content_wrap"> 
 	<div class="bill">
 	
 		<img src="/images/iweblogo.jpg" class="bill_logo" />
@@ -110,6 +154,7 @@
 				<option value="보급형">보급형</option>
 				<option value="맞춤형">맞춤형</option>
 				<option value="고급형">고급형</option>
+				<option value="기타">기타</option>
 			</select>
 		</div>
 
@@ -205,7 +250,7 @@
 						<td style="width: 0%;" id="etc1"></td>
 					</tr>
 
-					<tr>
+					<tr class="default_tr">
 						<td class="bold">
 							<input type="text" name="sort2" id="sort2" value="언어" />
 						</td>
@@ -222,7 +267,7 @@
 							<input type="text" name="price2" id="price2" class="default_price" value="" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td>
-							<input type="text" name="sup_price2" id="sup_price2" class="default_sup_price price" value="" readonly/>
+							<input type="text" name="sup_price2" id="sup_price2" class="default_sup_price price" value="" />
 						</td>
 						<td style="width: 0%;" id="etc2"></td>
 					</tr>
@@ -247,7 +292,7 @@
 							<input type="text" name="design_price1" id="design_price1" class="design_price" value="" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td  style="width: 15%;">
-							<input type="text" name="design_sup_price1" id="design_sup_price1" class="design_sup_price" value=""readonly />
+							<input type="text" name="design_sup_price1" id="design_sup_price1" class="design_sup_price" value="" />
 						</td>
 						<td style="width: 0%;" id="design_etc"></td>
 					</tr>
@@ -266,10 +311,10 @@
 							<input type="text" name="design_quantity2" id="design_quantity2" class="design_quantity" value="" onchange="quantityChange(id)" />
 						</td>
 						<td>
-							<input type="text" name="design_price2" id="design_price2" class="design_price" value="" onchange="transComma(); priceChange(id);"readonly />
+							<input type="text" name="design_price2" id="design_price2" class="design_price" value="" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td>
-							<input type="text" name="design_sup_price2" id="design_sup_price2" class="design_sup_price" value="" readonly/>
+							<input type="text" name="design_sup_price2" id="design_sup_price2" class="design_sup_price" value="" />
 						</td>
 						<td style="width: 0%;"  id="design_etc2"></td>
 					</tr>
@@ -294,7 +339,7 @@
 							<input type="text" name="program_price1" id="program_price1" class="program_price" value="" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td  style="width: 15%;">
-							<input type="text" name="program_sup_price1" id="program_sup_price1" class="program_sup_price" value="" readonly/>
+							<input type="text" name="program_sup_price1" id="program_sup_price1" class="program_sup_price" value="" />
 						</td>
 						<td style="width: 0%;"  id="program_etc1"></td>
 					</tr>
@@ -313,10 +358,10 @@
 							<input type="text" name="program_quantity2" id="program_quantity2" class="program_quantity" value="1" onchange="quantityChange(id)" />
 						</td>
 						<td>
-							<input type="text" name="program_price2" id="program_price2" class="program_price" value="" onchange="transComma(); priceChange(id);" readonly/>
+							<input type="text" name="program_price2" id="program_price2" class="program_price" value="" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td>
-							<input type="text" name="program_sup_price2" id="program_sup_price2" class="program_sup_price" value=""readonly />
+							<input type="text" name="program_sup_price2" id="program_sup_price2" class="program_sup_price" value=""  />
 						</td>
 						<td style="width: 0%;" id="program_etc2"></td>
 					</tr>
@@ -338,10 +383,10 @@
 							<input type="text" name="service_quantity1" id="service_quantity1" class="service_quantity" value="1" onchange="quantityChange(id)" />
 						</td>
 						<td style="width: 15%;">
-							<input type="text" name="service_price1" id="service_price1 " class="service_price"  value="22,000" onchange="transComma(); priceChange(id);" readonly/>
+							<input type="text" name="service_price1" id="service_price1 " class="service_price"  value="22,000" onchange="transComma(); priceChange(id);" />
 						</td>
 						<td style="width: 15%;">
-							<input type="text" name="service_sup_price1" id="service_sup_price1" class="service_sup_price price"readonly/>
+							<input type="text" name="service_sup_price1" id="service_sup_price1" class="service_sup_price price" />
 						</td>
 						<td style="width: 0%;" id="service_etc1"></td>
 					</tr>
@@ -366,10 +411,10 @@
 							</select>
 						</td>
 						<td>
-							<input type="text" name="service_price2" id="service_price2 " class="service_price" onchange="transComma(); priceChange(id);"value="" readonly/>
+							<input type="text" name="service_price2" id="service_price2 " class="service_price" onchange="transComma(); priceChange(id);"value="" />
 						</td>
 						<td>
-							<input type="text" name="service_sup_price2" id="service_sup_price2" class="service_sup_price price" value="" readonly/>
+							<input type="text" name="service_sup_price2" id="service_sup_price2" class="service_sup_price price" value="" />
 						</td>
 						<td style="width: 0%;"  id="service_etc2"></td>
 					</tr>
@@ -377,37 +422,39 @@
 			</div>
 		</div>
 	
-		<div class="bill_pay">
+		<div class="bill_pay"  style="position: relative;">
 		
 			<div class="bill_total">
-				<p>total(부가세 별도)</p>
-				<input type="text" id="bill_total_input" />
+				<p>공급가액(부가세 미포함)</p>
+				<input type="text" id="bill_total_input" style="width: 50%;"/>
+			</div>
+			<div class="bill_discount">
+				<p>할인률</p>
+				<input type="text" id="bill_discount_input" style="width: 49%;" value="0"/>%
+			</div>
+			<div class="bill_vat">
+				<p>부가세</p>
+				<input type="text" id="bill_vat_input" style="width: 50%;"/>
 			</div>
 			<div class="bill_custom">
-				<p>제안가(부가세 포함)</p>
-				<input type="text" id="proposal_bill_input" />
+				<p>Total제안가(부가세 포함)</p>
+				<input type="text" id="proposal_bill_input" style="width: 50%;" data-val=""/>
+			</div>
+			<div  class="cutoff_btn" style="position: absolute; right: -180px; bottom: 0;">
+				<select id="cutoff_btn">
+					<option data-unit="0" value="" selected disabled>선택</option>
+					<option data-unit="10" value="0">10 단위 절사</option>
+					<option data-unit="100" value="1">100 단위 절사</option>
+					<option data-unit="1000" value="2">1,000 단위 절사</option>
+					<option data-unit="10000" value="3">10,000 단위 절사</option>
+					<option data-unit="100000" value="4">100,000 단위 절사</option>
+					<option data-unit="1000000" value="5">1,000,000 단위 절사</option>
+				</select>
 			</div>
 		</div>
-			<div class="am">
-			<script>
-				function setUserID() {					
-					userid = $("#userid option:selected").val(); // userid가 select됐을때 작용					
-					$('#name').val(''); 
-					$('#tel').val('')
-
-					if (userid) {
-						$.post('./jsonTel.php',{'userid':userid}, function(req) { // json 방식으로 전송하여 리턴값 받기.							
-							parData = JSON.parse(req); // 문자열 구문 분석, 객체생성						
-							name = parData['name']; // name이라는 객체를 생성
-							tel = parData['tel'];										
-
-							$('#tel').val(tel); // 전화
-							$('#name').val(name); 
-						});
-					}
-				}
-			</script>
-		<select name='userid' id="userid" onchange="setUserID()">
+		<div class="am">
+			
+		<select name='userid' id="userid" class="no_print" onchange="setUserID()">
 			<option value=''>직원목록</option>
 			<?
 				for ($i=0; $i<count($arr_member); $i++) {
@@ -442,10 +489,26 @@
 	</div>
 </div>
 
+</div>
 <script>
+	$('.print_btn').click(function () {
+			window.print();
+	});
 
-		$('.print_btn').click(function () {
-				window.print();
-		});
+	function setUserID() {					
+		userid = $("#userid option:selected").val(); // userid가 select됐을때 작용					
+		$('#name').val(''); 
+		$('#tel').val('')
 
+		if (userid) {
+			$.post('./jsonTel.php',{'userid':userid}, function(req) { // json 방식으로 전송하여 리턴값 받기.							
+				parData = JSON.parse(req); // 문자열 구문 분석, 객체생성						
+				name = parData['name']; // name이라는 객체를 생성
+				tel = parData['tel'];										
+
+				$('#tel').val(tel); // 전화
+				$('#name').val(name); 
+			});
+		}
+	}
 </script>

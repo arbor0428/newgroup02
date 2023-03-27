@@ -1,5 +1,5 @@
 <?
-	include '../module/class/class.DbCon.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/module/class/class.DbCon.php';
 
 	if(!$userid || !$chkYear){
 		echo ("<script language='javascript'>");
@@ -284,3 +284,5 @@
 		<th><?=$lateTotal?></th>
 	</tr>
 </table>
+
+

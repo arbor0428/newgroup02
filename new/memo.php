@@ -261,5 +261,5 @@
 <iframe name='ifra_memo' src='about:blank' width='0' height='0' frameborder='0' scrolling='no' style='display:none;'></iframe>
 
 <?
-	include './memoSet.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/new/memoSet.php';
 ?>

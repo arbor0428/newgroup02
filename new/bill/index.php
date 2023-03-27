@@ -9,9 +9,9 @@
 ?>
 
 
-<div class="wrap">
+<div class="wrap bill_index">
 	<?
-		include "../top_header.php";
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
 	?>
 
 	<div class="approval_container">
@@ -20,21 +20,21 @@
 				<div class="list-title-text">인사</div>			
 			</div>
 			<div class="btn-wrap">
-				<a href="/approval/proof/up_index.php?type=write">
+				<a href="/new/approval/proof/up_index.php?type=write">
 					<div class="list-btn color-person">재직증명서</div>
 				</a>
-				<a href="/approval/career/up_index.php?type=write">
+				<a href="/new/approval/career/up_index.php?type=write">
 					<div class="list-btn color-person">경력증명서</div>
 				</a>
-				<a href="/approval/leave2/up_index.php?type=list">
+				<a href="/new/approval/leave/up_index.php?type=list">
 					<div class="list-btn color-person">휴가 신청서</div>
 				</a>
 				<a href="/new/bill/transition.php">
 					<div class="list-btn color-person">인수인계서</div>
 				</a>		
-				<a href="/approval/leave/up_index.php?type=list">
+				<!-- <a href="/approval/leave/up_index.php?type=list">
 					<div class="list-btn deactivation">(구)휴가 신청서</div>
-				</a>		
+				</a> -->		
 				<a>
 					<div class="list-btn deactivation">경조사 신청</div>
 				</a>

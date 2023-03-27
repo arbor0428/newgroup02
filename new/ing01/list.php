@@ -96,100 +96,102 @@ function reg_write(uid){
 
 </form>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
-	<tr>
-		<th>접수일</th>
-		<th>순위</th>
-		<th>상호</th>
-		<th>업종</th>
-		<th>중요도</th>
-		<th>담당자</th>
-		<th>일반전화</th>
-		<th>제작기간</th>
-		<th>마감시한</th>
-		<th>진행률</th>
-	</tr>
+
+<div class="mobile_scroll">
+	<table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
+		<tr>
+			<th>접수일</th>
+			<th>순위</th>
+			<th>상호</th>
+			<th>업종</th>
+			<th>중요도</th>
+			<th>담당자</th>
+			<th>일반전화</th>
+			<th>제작기간</th>
+			<th>마감시한</th>
+			<th>진행률</th>
+		</tr>
 
 
 
-<?
-if($total_record != '0'){
-	$i = $total_record - ($current_page - 1) * $record_count;
+	<?
+	if($total_record != '0'){
+		$i = $total_record - ($current_page - 1) * $record_count;
 
-	$line_num = 0;
+		$line_num = 0;
 
-	while($row = mysql_fetch_array($result)){
+		while($row = mysql_fetch_array($result)){
 
-		$uid = $row["uid"];
-		$sort = $row["sort"];
-		$person = $row["person"];
-		$company = $row["company"];
-		$upjong = $row["upjong"];
-		$status = $row["status"];
-		$tel01 = $row["tel01"];
-		$tel02 = $row["tel02"];
-		$tel03 = $row["tel03"];
-		$date01 = $row["date01"];
-		$edate01 = $row["edate01"];
-		$edate02 = $row["edate02"];
-		$edate03 = $row["edate03"];
-		$playing = $row["playing"];
+			$uid = $row["uid"];
+			$sort = $row["sort"];
+			$person = $row["person"];
+			$company = $row["company"];
+			$upjong = $row["upjong"];
+			$status = $row["status"];
+			$tel01 = $row["tel01"];
+			$tel02 = $row["tel02"];
+			$tel03 = $row["tel03"];
+			$date01 = $row["date01"];
+			$edate01 = $row["edate01"];
+			$edate02 = $row["edate02"];
+			$edate03 = $row["edate03"];
+			$playing = $row["playing"];
 
-		$telephone = $tel01.'-'.$tel02.'-'.$tel03;
-		if($date01)	$date01 = $date01.'일';
+			$telephone = $tel01.'-'.$tel02.'-'.$tel03;
+			if($date01)	$date01 = $date01.'일';
 
-		$edate = '';
+			$edate = '';
 
-		if($edate01)	$edate = $edate01.'년 ';
-		if($edate02)	$edate .= $edate02.'월 ';
-		if($edate03)	$edate .= $edate03.'일';
-
-
-		$reg_date = $row["reg_date"];
-		$reg_date = date('Y-m-d',$reg_date);
-
-		$date_diff = Util::dateDiff($SYSTEM_DATE,$reg_date);
-
-		if($date_diff < 3)	 $new_icon = "<img src='../../images/common/new_file.gif'>";
-		else	$new_icon = $reg_date;
+			if($edate01)	$edate = $edate01.'년 ';
+			if($edate02)	$edate .= $edate02.'월 ';
+			if($edate03)	$edate .= $edate03.'일';
 
 
-		$java_link = 'reg_write';
-		
+			$reg_date = $row["reg_date"];
+			$reg_date = date('Y-m-d',$reg_date);
 
-		
-?>
+			$date_diff = Util::dateDiff($SYSTEM_DATE,$reg_date);
 
-	<tr style='cursor:hand' onmouseover="this.style.backgroundColor='#f9f9f9'" onmouseout="this.style.backgroundColor='#ffffff'">
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$new_icon?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$sort?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$company?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$upjong?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$status?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$person?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$telephone?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$date01?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$edate?></td>
-		<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$playing?></td>
+			if($date_diff < 3)	 $new_icon = "<img src='../../images/common/new_file.gif'>";
+			else	$new_icon = $reg_date;
 
 
-	</tr>
+			$java_link = 'reg_write';
+			
 
-<?
-		$line_num++;
-		$i--;
+			
+	?>
+
+		<tr style='cursor:hand' onmouseover="this.style.backgroundColor='#f9f9f9'" onmouseout="this.style.backgroundColor='#ffffff'">
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$new_icon?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$sort?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$company?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$upjong?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$status?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$person?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$telephone?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$date01?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$edate?></td>
+			<td onclick="<?=$java_link?>('<?=$uid?>');"><?=$playing?></td>
+
+
+		</tr>
+
+	<?
+			$line_num++;
+			$i--;
+		}
+	}else{
+	?>
+		<tr> 
+			<td colspan="10" align='center'>없습니다</td>
+		</tr>
+	<?
 	}
-}else{
-?>
-	<tr> 
-		<td colspan="10" align='center'>없습니다</td>
-	</tr>
-<?
-}
-?>
-</table>
+	?>
+	</table>
 
-
+</div>
 
 
 
@@ -197,4 +199,5 @@ if($total_record != '0'){
 <?
 	$fName = 'form1';
 	include '../pageNum.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
 ?>

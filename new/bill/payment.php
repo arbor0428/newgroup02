@@ -21,6 +21,18 @@
 			padding: 50px;
 			box-sizing: border-box;
 		}
+			.content_head {
+				display: none;
+			}
+			.wrap {
+				width: 100%;
+			}
+			.bill_content_wrap {
+				width: 100%;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
 		.no_print, .none_print {
 			display: none !important;
 		}
@@ -103,214 +115,221 @@
 .bill_sort {border-bottom: none !important;}
 }
 </style>
-<div class="bill">
-	<img src="/images/iweblogo.jpg" class="bill_logo" />
-	<button class="print_btn no_print">인쇄</button>
-	<div class="bill_title">
-		<input
-			type="text"
-			name="biil_title"
-			value="주식회사 아이웹"
-			placeholder=""
-		/>
-	</div>
-
-	<div class="bill_content">
-		<div class="bill_top_content">
-			<table class="bill_table_modify2">
-				<tr>
-					<th>수 신</th>
-					<td>
-						<input type="text" value="" placeholder="업체이름" />
-					</td>
-				</tr>
-				<tr>
-					<th>담당자</th>
-					<td>
-						<input type="text" placeholder="홈페이지 담당자님" />
-					</td>
-				</tr>
-				<tr>
-					<th>제 목</th>
-					<td>
-						<input
-							type="text"
-							placeholder="홈페이지(주소) 제작 잔금을 청구합니다."
-						/>
-					</td>
-				</tr>
-			</table>
-			<table>
-				<tr>
-					<th rowspan="5" style="writing-mode: vertical-lr; padding: 5px">
-						공급자
-					</th>
-				</tr>
-				<tr style="border-top: none">
-					<th width="100px">등록번호</th>
-					<td colspan="3">
-						<input type="text" id="bill_num" />
-					</td>
-				</tr>
-				<tr>
-					<th>상호</th>
-					<td width="130px">아이웹</td>
-					<th>성명</th>
-					<td>조준</td>
-				</tr>
-
-				<tr>
-					<th>사업장소재</th>
-					<td colspan="3">
-						서울시 마포구 매봉산로37, DMC산학협력연구센터 605호
-					</td>
-				</tr>
-
-				<tr>
-					<th>업태</th>
-					<td>서비스업</td>
-					<th>종목</th>
-					<td>소프트웨어 개발</td>
-				</tr>
-			</table>
-		</div>
-		<div class="bill_bottom_content">
-			<table class="bill_table_modify2">
-				<tr>
-					<th style="width: 25%">홈페이지 만료일</th>
-					<td style="width: 25%">
-						<input type="text" placeholder="2024. 01. 01" />
-					</td>
-					<th style="width: 25%">도메인 만료일</th>
-					<td style="width: 22%">
-						<input type="text" />
-					</td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="bill_bottom_content">
-			<table class="bill_pay"style="margin: 0; width: 48%; margin-left: auto">
-				<tr class="bill_total">
-					<th style="width: 25%">합계</th>
-					<td style="text-align: right">
-						<input type="text" id="bill_total_input" style="width: 63%" />
-						<span>원 (부가세포함)</span>
-					</td>
-				</tr>
-			</table>
-			<div class="row_add_wrap no_print">
-				<button id="btn_row_add" data-name="row_add">행 추가 +</button>
+<div class="wrap bill_wrap">
+	<?
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
+	?>
+	 <div class="bill_content_wrap"> 
+		<div class="bill">
+			<img src="/images/iweblogo.jpg" class="bill_logo" />
+			<button class="print_btn no_print">인쇄</button>
+			<div class="bill_title">
+				<input
+					type="text"
+					name="biil_title"
+					value="주식회사 아이웹"
+					placeholder=""
+				/>
 			</div>
 
-			<table class="bill_table_modify02" id="bill_tbl">
-				<tr>
-					<th style="width: 20%">구분</th>
-					<th style="width: 20%">비용(원)</th>
-					<th style="width: 10%">기간</th>
-					<th style="width: 20%">합계(원 /VAT 포함)</th>
-					<th style="width: 20%">
-						<input tyep="text" placeholder="비고 / 만료일" required style="text-align: center;"/>
-					</th>
-					<th style="width: 0%"></th>
-				</tr>
+			<div class="bill_content">
+				<div class="bill_top_content">
+					<table class="bill_table_modify2">
+						<tr>
+							<th>수 신</th>
+							<td>
+								<input type="text" value="" placeholder="업체이름" />
+							</td>
+						</tr>
+						<tr>
+							<th>담당자</th>
+							<td>
+								<input type="text" placeholder="홈페이지 담당자님" />
+							</td>
+						</tr>
+						<tr>
+							<th>제 목</th>
+							<td>
+								<input
+									type="text"
+									placeholder="홈페이지(주소) 제작 잔금을 청구합니다."
+								/>
+							</td>
+						</tr>
+					</table>
+					<table>
+						<tr>
+							<th rowspan="5" style="writing-mode: vertical-lr; padding: 5px">
+								공급자
+							</th>
+						</tr>
+						<tr style="border-top: none">
+							<th width="100px">등록번호</th>
+							<td colspan="3">
+								<input type="text" id="bill_num" />
+							</td>
+						</tr>
+						<tr>
+							<th>상호</th>
+							<td width="130px">아이웹</td>
+							<th>성명</th>
+							<td>조준</td>
+						</tr>
 
-				<tr id="bill_clone_tr">
-					<td>
-						<select id="bill_sort_select1" onchange="selectBox(value)">
-							<option value="">선택</option>
-							<option value="traffic">
-								웹호스팅,트래픽관리, 백업관리,보안관리
-							</option>
-							<option value="domain">도메인</option>
-							<option value="self">직접입력</option>
-						</select>
+						<tr>
+							<th>사업장소재</th>
+							<td colspan="3">
+								서울시 마포구 매봉산로37, DMC산학협력연구센터 605호
+							</td>
+						</tr>
 
+						<tr>
+							<th>업태</th>
+							<td>서비스업</td>
+							<th>종목</th>
+							<td>소프트웨어 개발</td>
+						</tr>
+					</table>
+				</div>
+				<div class="bill_bottom_content">
+					<table class="bill_table_modify2">
+						<tr>
+							<th style="width: 25%">홈페이지 만료일</th>
+							<td style="width: 25%">
+								<input type="text" placeholder="2024. 01. 01" />
+							</td>
+							<th style="width: 25%">도메인 만료일</th>
+							<td style="width: 22%">
+								<input type="text" />
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="bill_bottom_content">
+					<table class="bill_pay"style="margin: 0; width: 48%; margin-left: auto">
+						<tr class="bill_total">
+							<th style="width: 25%">합계</th>
+							<td style="text-align: right">
+								<input type="text" id="bill_total_input" style="width: 63%" />
+								<span>원 (부가세포함)</span>
+							</td>
+						</tr>
+					</table>
+					<div class="row_add_wrap no_print">
+						<button id="btn_row_add" data-name="row_add">행 추가 +</button>
+					</div>
+
+					<table class="bill_table_modify02" id="bill_tbl">
+						<tr>
+							<th style="width: 20%">구분</th>
+							<th style="width: 20%">비용(원)</th>
+							<th style="width: 10%">기간</th>
+							<th style="width: 20%">합계(원 /VAT 포함)</th>
+							<th style="width: 20%">
+								<input tyep="text" placeholder="비고 / 만료일" required style="text-align: center;"/>
+							</th>
+							<th style="width: 0%"></th>
+						</tr>
+
+						<tr id="bill_clone_tr">
+							<td>
+								<select id="bill_sort_select1" onchange="selectBox(value)">
+									<option value="">선택</option>
+									<option value="traffic">
+										웹호스팅,트래픽관리, 백업관리,보안관리
+									</option>
+									<option value="domain">도메인</option>
+									<option value="self">직접입력</option>
+								</select>
+
+								<textarea
+									onkeydown="resize(this)"
+									onkeyup="resize(this)"
+									id="bill_sort1"
+									class="bill_sort"
+								></textarea>
+							</td>
+
+							<td>
+								<input
+									type="text"
+									id="bill_price1"
+									class="bill_price"
+									onchange="transComma(); priceChange(id);"
+								/>
+							</td>
+
+							<td>
+								<input
+									type="text"
+									id="bill_period1"
+									class="bill_period"
+									onchange="changePeriod(value)"
+								/>
+							</td>
+
+							<td>
+								<input
+									type="text"
+									id="bill_total_price1 "
+									class="bill_total_price price"
+									onchange="total()"
+								/>
+							</td>
+							<td>
+								<input type="text" id="bill_etc1" class="bill_etc" />
+							</td>
+							<td id="bill_button1"></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+			<div class="bill_bottom_list">
+				<ul>
+					<li>
+						<p>수취인 통장</p>
+						국민은행 011201-04-131424
+					</li>
+					<li>
+						<p>예금주</p>
+						㈜아이웹
+					</li>
+					<li>
+						<p style="width: 100%">
+							아이웹 홈페이지에서 [추가요금결제]를 통해 카드로도 결제가
+							가능합니다.
+						</p>
+					</li>
+					<li>
+						<p>담당자</p>
+						<input type="text" placeholder="담당자입력" />
+					</li>
+					<li>
+						<p>회신연락처</p>
 						<textarea
 							onkeydown="resize(this)"
 							onkeyup="resize(this)"
-							id="bill_sort1"
-							class="bill_sort"
+							placeholder="회신 연락처를 입력해 주세요"
+							required
+							style="padding: 0;"
 						></textarea>
-					</td>
+					</li>
+				</ul>
+			</div>
+		 <div class="bill_footer">
+				<h1>
+					주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
+					<span id="dojang" style="">(인)</span>
+				</h1>
+			</div>
+		</div>
 
-					<td>
-						<input
-							type="text"
-							id="bill_price1"
-							class="bill_price"
-							onchange="transComma(); priceChange(id);"
-						/>
-					</td>
-
-					<td>
-						<input
-							type="text"
-							id="bill_period1"
-							class="bill_period"
-							onchange="changePeriod(value)"
-						/>
-					</td>
-
-					<td>
-						<input
-							type="text"
-							id="bill_total_price1 "
-							class="bill_total_price price"
-							onchange="total()"
-						/>
-					</td>
-					<td>
-						<input type="text" id="bill_etc1" class="bill_etc" />
-					</td>
-					<td id="bill_button1"></td>
-				</tr>
-			</table>
+		<div class="bank_img">
+			<img src="/new/images/bank.png" />
 		</div>
 	</div>
-
-	<div class="bill_bottom_list">
-		<ul>
-			<li>
-				<p>수취인 통장</p>
-				국민은행 011201-04-131424
-			</li>
-			<li>
-				<p>예금주</p>
-				㈜아이웹
-			</li>
-			<li>
-				<p style="width: 100%">
-					아이웹 홈페이지에서 [추가요금결제]를 통해 카드로도 결제가
-					가능합니다.
-				</p>
-			</li>
-			<li>
-				<p>담당자</p>
-				<input type="text" placeholder="담당자입력" />
-			</li>
-			<li>
-				<p>회신연락처</p>
-				<textarea
-					onkeydown="resize(this)"
-					onkeyup="resize(this)"
-					placeholder="회신 연락처를 입력해 주세요"
-					required
-					style="padding: 0;"
-				></textarea>
-			</li>
-		</ul>
-	</div>
- <div class="bill_footer">
-		<h1>
-			주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
-			<span id="dojang" style="">(인)</span>
-		</h1>
-	</div>
-</div>
-
-<div class="bank_img">
-	<img src="/new/images/bank.png" />
 </div>
 
 <script>

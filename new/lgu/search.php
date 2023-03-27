@@ -40,49 +40,53 @@ function is_Key(){
 </script>
 
 
+<div class="search_container">
+	<div class="search_wrap">
+		<div class="search_row">
+			<div class="search_th">구분</div>
+			<div class="search_td">
+				<select name='f_mtype'>
+					<option value=''>===</option>
+					<option value='법인' <?if($f_mtype=='법인'){echo 'selected';}?>>법인</option>
+					<option value='개인사업자' <?if($f_mtype=='개인사업자'){echo 'selected';}?>>개인사업자</option>
+					<option value='개인' <?if($f_mtype=='개인'){echo 'selected';}?>>개인</option>
+				</select>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">상태</div>
+			<div class="search_td">
+				<select name='f_status'>
+					<option value=''>===</option>
+				<?
+					for($i=0; $i<count($statusArr); $i++){
+						$sTxt = $statusArr[$i];
+						if($sTxt == $f_status)	$chk = 'checked';
+						else							$chk = '';
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%' class='gTable2'>
-	<tr> 
-		<th width="17%">구분</th>
-		<td width="33%">
-			<select name='f_mtype'>
-				<option value=''>===</option>
-				<option value='법인' <?if($f_mtype=='법인'){echo 'selected';}?>>법인</option>
-				<option value='개인사업자' <?if($f_mtype=='개인사업자'){echo 'selected';}?>>개인사업자</option>
-				<option value='개인' <?if($f_mtype=='개인'){echo 'selected';}?>>개인</option>
-			</select>
-		</td>
-		<th width="17%">상태</th>
-		<td width="33%">
-			<select name='f_status'>
-				<option value=''>===</option>
-			<?
-				for($i=0; $i<count($statusArr); $i++){
-					$sTxt = $statusArr[$i];
-					if($sTxt == $f_status)	$chk = 'checked';
-					else							$chk = '';
-
-					echo ("<option value='$sTxt' $chk>$sTxt</option>");
-				}
-			?>
-			</select>
-		</td>
-	</tr>
-
-	<tr> 
-		<th>고객명(회사명)</th>
-		<td><input type='text' name='f_name' style='width:75%' value='<?=$f_name?>' onkeypress='is_Key();'></td>
-		<th>대표자명</th>
-		<td><input type='text' name='f_ceo' style='width:75%' value='<?=$f_ceo?>' onkeypress='is_Key();'></td>
-	</tr>
-
-	<tr> 
-		<th>담당자</th>
-		<td>
-			<table cellpadding='0' cellspacing='0' border='0' width='75%'>
-				<tr>
-					<td>
-						<select name='f_staff'>
+						echo ("<option value='$sTxt' $chk>$sTxt</option>");
+					}
+				?>
+				</select>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">고객명(회사명)</div>
+			<div class="search_td">
+				<input type='text' name='f_name' style='width:75%' value='<?=$f_name?>' onkeypress='is_Key();'>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">대표자명</div>
+			<div class="search_td">
+				<input type='text' name='f_ceo' style='width:75%' value='<?=$f_ceo?>' onkeypress='is_Key();'>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">담당자</div>
+			<div class="search_td">
+				<div class="dp_f dp_c">
+					<select name='f_staff'>
 							<option value=''>===</option>
 						<?
 							for($i=0; $i<count($arr_member); $i++){
@@ -91,44 +95,65 @@ function is_Key(){
 						<?
 							}
 						?>
-						</select>
-					</td>
-					<td align='right'>직접입력 : <input type='text' name='f_sname' style='width:90px;' value='<?=$f_sname?>' onkeypress='is_Key();'></td>
-				</tr>
-			</table>
-		</td>
-		<th>이용상품</th>
-		<td>
-			<input type='checkbox' name='f_service01' value='1' <?if($f_service01){echo 'checked';}?>>대표번호&nbsp;&nbsp;
-			<input type='checkbox' name='f_service02' value='1' <?if($f_service02){echo 'checked';}?>>기업070&nbsp;&nbsp;
-			<input type='checkbox' name='f_service03' value='1' <?if($f_service03){echo 'checked';}?>>오피스넷&nbsp;&nbsp;
-			<input type='checkbox' name='f_service04' value='1' <?if($f_service04){echo 'checked';}?>>지능형CCTV&nbsp;&nbsp;
-			<input type='checkbox' name='f_service05' value='1' <?if($f_service05){echo 'checked';}?>>웹팩스&nbsp;&nbsp;
-			<input type='checkbox' name='f_service06' value='1' <?if($f_service06){echo 'checked';}?>>소호인터넷
-		</td>
-	</tr>
+					</select>
+					<div class="dp_f dp_c">
+						직접입력 : 
+						<input type='text' name='f_sname' style='width:90px;' value='<?=$f_sname?>' onkeypress='is_Key();'>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">이용상품</div>
+			<div class="search_td dp_f dp_c dp_wrap">
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service01' value='1' <?if($f_service01){echo 'checked';}?>>대표번호
+				</div>
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service02' value='1' <?if($f_service02){echo 'checked';}?>>기업070
+				</div>
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service03' value='1' <?if($f_service03){echo 'checked';}?>>오피스넷
+				</div>
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service04' value='1' <?if($f_service04){echo 'checked';}?>>지능형CCTV
+				</div>
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service05' value='1' <?if($f_service05){echo 'checked';}?>>웹팩스
+				</div>
+				<div class="dp_f dp_c">
+					<input type='checkbox' name='f_service06' value='1' <?if($f_service06){echo 'checked';}?>>소호인터넷
+				</div>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">부가정보</div>
+			<div class="search_td">
+				<input type='text' name='f_ment' style='width:235px;' value='<?=$f_ment?>' onkeypress='is_Key();'>
+			</div>
+		</div>
+		<div class="search_row">
+			<div class="search_th">대표번호</div>
+			<div class="search_td">
+				<input type='text' name='f_pnum' style='width:235px;' value='<?=$f_pnum?>' onkeypress='is_Key();'> 
+			</div>
+		</div>
+		<div class="search_row sel50" style="width: 100%;">
+			<div class="search_th wid15">개통일</div>
+			<div class="search_td">
+				<?
+					//날짜별 검색 스크립트
+					$SearchDateForm = 'form1';
+					include $_SERVER["DOCUMENT_ROOT"].'/module/SearchDate.php';
+				?>
+			</div>
+		</div>
 
-	<tr>
-		<th>부가정보</th>
-		<td><input type='text' name='f_ment' style='width:235px;' value='<?=$f_ment?>' onkeypress='is_Key();'></td>
-		<th>대표번호</th>
-		<td><input type='text' name='f_pnum' style='width:235px;' value='<?=$f_pnum?>' onkeypress='is_Key();'></td>
-	</tr>
 
-	<tr> 
-		<th>개통일</td>
-		<td colspan='3'>
-		<?
-			//날짜별 검색 스크립트
-			$SearchDateForm = 'form1';
-			include '../module/SearchDate.php';
-		?>
-		</td>
-	</tr>
-</table>
+	</div>
+</div>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-	<tr>
-		<td height='50' align='center'><a href="javascript:set_search();"><img src='/images/common/search.gif'></a>&nbsp;<a href="javascript:set_reset();"><img src='/images/common/reset.gif'></a></td>
-	</tr>
-</table>
+<div class="serach_btn-wrap dp_f dp_c dp_cc">
+	<a href="javascript:set_search();"  class="btn_primary03">검색</a>
+	<a href="javascript:set_reset();"  class="btn_primary03">초기화</a>
+</div>

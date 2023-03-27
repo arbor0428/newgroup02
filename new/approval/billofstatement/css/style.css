@@ -1,0 +1,281 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+header {
+  margin-top: 6em;
+  margin-left: 46em;
+}
+
+#title {
+  letter-spacing: 6px;
+  margin-left: 1em;
+  padding-bottom: 3em;
+}
+
+span strong:nth-child(2) {
+  font-size: 2rem;
+}
+
+#title-under {
+  border-bottom: 1px solid black;
+  width: 100%;
+}
+
+#title-under-section {
+  width: 22%;
+  margin: 0 auto;
+  margin-top: 3em;
+  font-size: 1rem;
+}
+
+#receipt-section,
+#stopover-section,
+#section-title-section {
+  margin-bottom: 1em;
+}
+
+#receipt,
+#stopover,
+#sentence-title {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-right: 1em;
+}
+
+#section-title-section .bold_sizeup {
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+#number-list {
+  width: 35%;
+  margin: 0 auto;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  margin-right: 34em;
+}
+
+#number-list ol {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+#number-list ol li:nth-child(1) {
+  margin-bottom: 2em;
+}
+
+#number-list ol li:nth-child(2) {
+  margin-bottom: 1em;
+}
+
+#number-list span {
+  margin-left: 13em;
+  font-weight: bold;
+}
+
+table,
+td,
+th {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+thead {
+  font-size: 11px;
+  padding: 10px;
+}
+
+th {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+.tableclass {
+  empty-cells: show;
+  height: 23em;
+  width: 30%;
+  border: 1px solid black;
+  margin: 0 auto;
+}
+
+.product-name {
+  width: 18em;
+  background-color: #e1ebf7;
+}
+
+.unit-price {
+  width: 6em;
+  background-color: #e1ebf7;
+}
+
+.amount {
+  width: 4em;
+  background-color: #e1ebf7;
+}
+
+.total {
+  width: 8em;
+  background-color: #e1ebf7;
+}
+
+.note {
+  width: 20em;
+  background-color: #e1ebf7;
+}
+
+tfoot tr {
+  text-align: center;
+  font-size: 11px;
+}
+
+tfoot tr td {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+
+.total {
+  border-collapse: separate;
+}
+
+.tfoot-won {
+  text-align: right;
+}
+
+tfoot {
+  border-collapse: separate;
+}
+
+.sum {
+  background-color: #e1ebf7;
+}
+
+.surtax {
+  background-color: #e1ebf7;
+}
+
+.surtax-plus-price {
+  background-color: #e1ebf7;
+}
+
+#section-bottom {
+  margin: 0 auto;
+  margin-left: 41.5em;
+  margin-top: 3em;
+}
+
+#section-bottom p {
+  font-weight: bold;
+  font-size: 1em;
+  margin-bottom: 20px;
+}
+
+#section-bottom div {
+  font-size: 1em;
+}
+
+#depositor {
+  margin-bottom: 14px;
+  font-weight: bold;
+}
+
+#depositor span:nth-child(2) {
+  margin-left: 15em;
+}
+
+#cardpay {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#number-email {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+#number-email .person {
+  margin-left: 6em;
+}
+
+#number-email .email {
+  margin-left: 6em;
+}
+
+#finish-section span {
+  font-size: 1em;
+}
+
+#finish-section .finish {
+  margin-left: 6em;
+}
+
+#iwebrepresentative {
+  margin-top: 5em;
+  margin-left: 6.5em;
+  font-weight: bold;
+  margin-bottom: 3em;
+}
+
+#iwebrepresentative .company {
+  margin-right: 1em;
+  font-size: 1.5em;
+}
+
+#iwebrepresentative .iweb {
+  margin-right: 1em;
+  font-size: 1.5em;
+}
+
+#iwebrepresentative .repre {
+  font-size: 1.5em;
+}
+
+#last-sentence {
+  margin-left: 3em;
+}
+
+footer {
+  border-top: 1px solid black;
+  width: 100%;
+  margin: 0 auto;
+  height: 130px;
+}
+
+.iwebstamp {
+  position: absolute;
+  left: 68em;
+  bottom: -20em;
+}
+
+#footer-sentence {
+  width: 25%;
+
+  margin: 0 auto;
+  font-size: 1rem;
+}
+
+#first-sentence {
+  margin-top: 1em;
+  margin-bottom: 0.5em;
+}
+
+#first-sentence .charge {
+  margin-right: 10em;
+}
+
+#first-sentence .personalbest {
+  margin-left: 10em;
+}
+
+#sec-sentence {
+  margin-bottom: 0.5em;
+}
+
+#sec-sentence .receiving {
+  margin-left: 10em;
+}
+
+#sec-sentence span:nth-child(3) {
+  margin-left: 10.6em;
+}

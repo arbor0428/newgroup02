@@ -26,6 +26,18 @@ table.transition_table select {
 		.no_print, .none_print {
 			display: none !important;
 		}
+			.content_head {
+				display: none;
+			}
+			.wrap {
+				width: 100%;
+			}
+			.bill_content_wrap {
+				width: 100%;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
 		select {
 			border :none !important;
 			font-size: 12px !important;
@@ -83,131 +95,136 @@ table.transition_table select {
 	}
 </style>
 
-<div class="bill">
-	<img src="/images/iweblogo.jpg" class="bill_logo" />
-	<button class="print_btn no_print">인쇄</button>
+<div class="wrap bill_wrap">
+	<?
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
+	?>
+	<div class="bill_content_wrap"> 
+		<div class="bill">
+			<img src="/images/iweblogo.jpg" class="bill_logo" />
+			<button class="print_btn no_print">인쇄</button>
 
-	<div class="bill_title">
-		<input
-			type="text"
-			name="biil_title"
-			value="인수인계서"
-			placeholder=""
-		/>
-	</div>
-
-		<?
-			include 'agree.php';
-		?>
-
-
-	<div class="row_add_wrap no_print">
-		<button id="btn_row_add3" data-name="row_add3">행 추가 +</button>
-	</div>
-	<div class="bill_content">
-		<div class="bill_top_content">
-			<table class="transition_table" id="work_tbl">
-				<tr>
-					<th width="8%">구 분</th>
-					<th width="15%">성 명</th>
-					<th width="15%">부 서</th>
-					<th width="15%">직 급</th>
-					<th width="15%">확인날짜</th>
-					<th width="*">비 고</th>
-					<th width="10%">확 인</th>
-					<th style="width: 0"></th>
-				</tr>
-				<tr id="work_tr">
-					<th>
-						<input
-							type="text"
-							placeholder=""
-							value="인계자"
-							name=""
-							id="work_sort"
-							style="text-align:center;"
-						/>
-					</th>
-					<td>
-						<select id="work_person_select1" onchange="setInfo(id)">
-								<option value="">선택</option>
-								<? for ($i = 0; $i < count($members); $i++) { ?>
-								<option value="<?= $members[$i]['userid'] ?>"><?= $members[$i]['name'] ?></option>
-								<? } ?>
-						</select>
-					</td>
-					<td>
-						<input type="text" name="work_team1" id="work_team1" class="work_team"/>
-					</td>
-					<td>
-						<input type="text" name="work_affi1" id="work_affi1" class="work_affi"/>
-					</td>
-					<td>
-						<input type="text" name="work_date1" id="work_date1" />
-					</td>
-					<td>
-						<textarea id="work_etc1" name="work_etc1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
-					</td>
-					<td>
-						<div class="sign">(인)</div>
-					</td>
-					<td id="work_button1"></td>
-				</tr>
-			</table>
-		</div>
-
-		<div class="bill_bottom_content">
-			<div class="row_add_wrap no_print">
-				<button id="row_add5" data-name="row_add5">행 추가 +</button>
+			<div class="bill_title">
+				<input
+					type="text"
+					name="biil_title"
+					value="인수인계서"
+					placeholder=""
+				/>
 			</div>
 
-			<table class="transition_table" id="work2_tbl">
-				<tr>
-					<th width="5%">번호</th>
-					<th width="15%">구분</th>
-					<th width="15%">업무 항목</th>
-					<th width="*">주요진행 사항 및 전달 사항</th>
-					<th width="*">관련 서류 (경로)</th>
-					<th style="width: 0%"></th>
-				</tr>
+				<?
+					include 'agree.php';
+				?>
 
-				<tr id="work2_tr">
-					<td>
-						<input
-							type="number"
-							value="1"
-							id="work2_num1"
-							name="work2_num1"
-							style="text-align: center"
-						/>
-					</td>
-					<td>
-						<textarea id="work2_sort1" name="work2_sort1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1""></textarea>
-					</td>
-					<td>
-						<textarea id="work2_work1" name="work2_work1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
-					</td>
-					<td>
-						<textarea id="work2_ment1" name="work2_ment1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
-					</td>
-					<td>
-						<textarea id="work2_url1" name="work2_url1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
-					</td>
-					<td></td>
-				</tr>
-			</table>
+
+			<div class="row_add_wrap no_print">
+				<button id="btn_row_add3" data-name="row_add3">행 추가 +</button>
+			</div>
+			<div class="bill_content">
+				<div class="bill_top_content">
+					<table class="transition_table" id="work_tbl">
+						<tr>
+							<th width="8%">구 분</th>
+							<th width="15%">성 명</th>
+							<th width="15%">부 서</th>
+							<th width="15%">직 급</th>
+							<th width="15%">확인날짜</th>
+							<th width="*">비 고</th>
+							<th width="10%">확 인</th>
+							<th style="width: 0"></th>
+						</tr>
+						<tr id="work_tr">
+							<th>
+								<input
+									type="text"
+									placeholder=""
+									value="인계자"
+									name=""
+									id="work_sort"
+									style="text-align:center;"
+								/>
+							</th>
+							<td>
+								<select id="work_person_select1" onchange="setInfo(id)">
+										<option value="">선택</option>
+										<? for ($i = 0; $i < count($members); $i++) { ?>
+										<option value="<?= $members[$i]['userid'] ?>"><?= $members[$i]['name'] ?></option>
+										<? } ?>
+								</select>
+							</td>
+							<td>
+								<input type="text" name="work_team1" id="work_team1" class="work_team"/>
+							</td>
+							<td>
+								<input type="text" name="work_affi1" id="work_affi1" class="work_affi"/>
+							</td>
+							<td>
+								<input type="text" name="work_date1" id="work_date1" />
+							</td>
+							<td>
+								<textarea id="work_etc1" name="work_etc1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
+							</td>
+							<td>
+								<div class="sign">(인)</div>
+							</td>
+							<td id="work_button1"></td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="bill_bottom_content">
+					<div class="row_add_wrap no_print">
+						<button id="row_add5" data-name="row_add5">행 추가 +</button>
+					</div>
+
+					<table class="transition_table" id="work2_tbl">
+						<tr>
+							<th width="5%">번호</th>
+							<th width="15%">구분</th>
+							<th width="15%">업무 항목</th>
+							<th width="*">주요진행 사항 및 전달 사항</th>
+							<th width="*">관련 서류 (경로)</th>
+							<th style="width: 0%"></th>
+						</tr>
+
+						<tr id="work2_tr">
+							<td>
+								<input
+									type="number"
+									value="1"
+									id="work2_num1"
+									name="work2_num1"
+									style="text-align: center"
+								/>
+							</td>
+							<td>
+								<textarea id="work2_sort1" name="work2_sort1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1""></textarea>
+							</td>
+							<td>
+								<textarea id="work2_work1" name="work2_work1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
+							</td>
+							<td>
+								<textarea id="work2_ment1" name="work2_ment1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
+							</td>
+							<td>
+								<textarea id="work2_url1" name="work2_url1" onkeydown="resize(this)" onkeyup="resize(this)" rows="1"></textarea>
+							</td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+			</div>
+
+		 <div class="bill_footer">
+				<h1>
+					주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
+					<span id="dojang" style="">(인)</span>
+				</h1>
+			</div>
 		</div>
 	</div>
-
- <div class="bill_footer">
-		<h1>
-			주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
-			<span id="dojang" style="">(인)</span>
-		</h1>
-	</div>
 </div>
-
-
 <script>
 $('.print_btn').click(function () {
 		window.print();

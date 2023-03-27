@@ -125,7 +125,7 @@
 
 
 		
-		frm.action = './bookmark_proc.php';
+		frm.action = '/new/bookmark_proc.php';
 		frm.submit();
 	}
 </script>

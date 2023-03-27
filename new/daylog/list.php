@@ -220,3 +220,8 @@ if($total_record != '0'){
 	</tr>
 </table>
 <!--/ÆäÀÌÁö-->
+
+
+<?
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
+?>

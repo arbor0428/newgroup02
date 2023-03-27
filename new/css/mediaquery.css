@@ -46,6 +46,11 @@
 	#quick_sms {
 		width: 100%; height: 400px;
 	}
+	.mobile_scroll {
+		width: 100%;
+		padding-bottom: 10px;
+		overflow-y: scroll;
+	}
 }
 
 @media (max-width:1400px){
@@ -106,6 +111,16 @@
 		width: 100%;
 		overflow-x: scroll;
 		padding-bottom: 10px;
+	}
+	.mobile_sub_wrap {
+		display: block;
+		padding: 15px 0 !important;
+	}
+	.mobile_sub {
+		width: 100%;
+		border-radius: 0px;
+		padding: 20px 10px;
+		box-shadow: none;
 	}
 }
 
@@ -179,7 +194,11 @@
 	}
 	.header .m_header_top {
 		display: flex;
-		justify-content: flex-end;
+		justify-content: space-between;
+	}
+	.header .m_header_top .m_home_btn .material-symbols-outlined {
+		color: #fff;
+		font-size: 30px;
 	}
 	.header .m_header_top .m_close_btn .material-symbols-outlined {
 		color: #fff;
@@ -207,7 +226,27 @@
 	.work_now_wrap .tbl .tbl_tr .tbl_th:nth-child(6), .work_now_wrap .tbl .tbl_tr .tbl_td:nth-child(6) {
 		width: 25%;
 	}
-	
+	.bill_wrap,
+	.bill_index,
+	.approval_container,
+	.approval_container .list-wrap{
+		width: 100%;
+	}
+	.bill_content_wrap {
+		overflow-x:scroll;
+	/* 	zoom: 0.5; */
+/* 	transform: scale(0.5); */
+	}
+	.bill {
+		min-width: 1000px; 
+	}
+	.cutoff_btn {
+	    right: 0 !important;
+    bottom: -75px !important;
+	}
+	.approval_container {
+	padding-bottom:120px;
+	}
 }
 @media (max-width:786px){ 
 	.pc_profile_wrap {
@@ -215,6 +254,7 @@
 	}
 	.btn_primary02 {
 		background-color: #1a60d7;
+		padding: 8px 20px;
 	}
 	.dayoff_wrap p .re_amt {
 		background-color: transparent; 
@@ -406,6 +446,16 @@
 		font-size: 10px;
 		background-color: #1a60d7;
 	}
+	.approval_container .list-btn {
+		font-size: 1.125rem;
+	}
+	.pc_only{
+		display: none;
+	}
+	.leave_row .tbl_th,
+	.leave_row .tbl_td {
+		width: 33.33% !important
+	}
 }
 
 @media (max-width:570px){ 
@@ -414,5 +464,11 @@
 	}
 	.book_mark_wrap {
 		width: 570px;
+	}
+	.subPage_tit {
+		font-size: 20px;
+	}
+	.bill_content_wrap {
+		/* zoom: 0.3; */
 	}
 }

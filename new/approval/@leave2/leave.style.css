@@ -1,0 +1,650 @@
+/** up_index.php */
+:root {
+  --main-bg-color: #e2e8f4;
+  --main-border-color: #796c98;
+  --sub-border-color: #f6f6f6;
+}
+
+* {
+  color: #000;
+}
+.leave-container a,
+.leave-container TD,
+.leave-container SELECT,
+.leave-container input,
+.leave-container DIV,
+.leave-container form,
+.leave-container TEXTAREA,
+.leave-container center,
+.leave-container option,
+.leave-container pre {
+  font-size: 1rem;
+  color: #000;
+}
+
+select,
+.agreeTable input,
+.dealTable input {
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: #fff;
+  transition: all 0.3s;
+}
+.agreeForm .addBtn {
+  border: none;
+
+  width: 20px;
+  height: 20px;
+  color: #222;
+  text-align: center;
+  cursor: pointer;
+  box-sizing: border-box;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 1.2;
+}
+.container {
+  width: 1200px;
+  margin: 0 auto;
+}
+
+.title {
+  width: 950px;
+  display: flex;
+  justify-content: end;
+  margin: 0 auto;
+}
+
+.title h1 {
+  text-align: center;
+  font-size: 2rem;
+}
+
+.title div {
+  text-align: right;
+  margin-top: 20px;
+}
+
+/** up_index.php end */
+
+/** list.php */
+.list_table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+  border-top: 2px solid var(--main-border-color);
+  border-bottom: 2px solid var(--main-border-color);
+}
+
+.list_table tr,
+.list_table th,
+.list_table td {
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  border: 1px solid #dee1e6;
+}
+
+.list_table tr:not(:first-child) {
+  cursor: pointer;
+  height: 35px;
+}
+
+.list_table tr:first-child {
+  border: none;
+}
+
+.list_table tr:hover {
+  background: rgba(180, 180, 180, 0.5);
+}
+
+.list_table th {
+  background-color: var(--main-bg-color);
+  height: 40px;
+}
+
+.list_table tr td:first-child,
+.list_table tr td:last-child {
+  border-right: none;
+}
+/* list.php end */
+
+/** write.php */
+.write-cont {
+  width: 950px;
+  height: 745px;
+  margin: 0 auto;
+  color: #000;
+}
+
+.write-cont header {
+  text-align: center;
+  position: relative;
+  margin: 100px 0px 50px;
+}
+
+.write-cont header h1 {
+  font-size: 50px;
+  letter-spacing: 50px;
+}
+
+.write-cont .logo {
+  position: absolute;
+  top: -80px;
+  left: 0;
+}
+
+.write-cont .logo img {
+  width: 120px;
+}
+
+.submitWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.submitBtn {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(97, 105, 107);
+  border-radius: 5px;
+  border: none;
+}
+
+.submitBtn:hover {
+  background-color: rgb(51, 51, 51);
+}
+
+.write-cont main {
+  position: relative;
+}
+
+/*/////////////////////////////////////////////////////////////*/
+/* ê²°ì œ */
+.agreeForm {
+  width: 100%;
+  height: 150px;
+}
+
+.sign-wrap {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+.sign-wrap .deal-sign {
+  padding-right: 182px;
+}
+
+.sign {
+  height: 70px;
+  text-align: center;
+  align-items: center;
+}
+
+.agreeTable,
+.dealTable {
+  height: 150px;
+  border-collapse: collapse;
+  text-align: center;
+  position: relative;
+  float: right;
+  font-size: 1rem !important;
+}
+
+.agreeTable th,
+.dealTable th {
+  height: 22px;
+  font-size: 1rem !important;
+}
+
+.sign {
+  width: 100px;
+  height: 90px;
+}
+
+/* ?•©?˜ */
+.dealTable {
+  height: 150px;
+  border-collapse: collapse;
+  text-align: center;
+  float: right;
+  margin-right: 10px;
+}
+
+/* 1. ë¬¸ì„œ? •ë³? */
+.submitForm {
+  width: 100%;
+  margin-top: 50px;
+}
+.formTable,
+.formTable2 {
+  width: 50%;
+  position: relative;
+  border-top: 1px solid #dee1e6;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  text-align: justify;
+  float: left;
+}
+.formTable th,
+.formTable td,
+.formTable2 th,
+.formTable2 td {
+  border: 1px solid #dee1e6;
+  line-height: 50px;
+}
+.formTable th,
+.formTable2 th {
+  width: 30%;
+  text-align: center;
+  background-color: #f1f2f2;
+}
+.formTable td,
+.formTable2 td {
+  padding-left: 25px;
+}
+.formTable2 th,
+.formTable2 td {
+  border-left: none;
+}
+/* .drafter {
+  width: 170px;
+  height: 26px;
+} */
+.formTable input,
+.formTable2 input {
+  border: none;
+}
+.formTable input:focus,
+.formTable2 input:focus,
+.inputTable input:focus {
+  outline: none;
+}
+
+/* 3. etc */
+.etc-wrap {
+  border: 2px dashed #ee0000;
+}
+
+.etcTitle > span {
+  color: #ee0000;
+  font-size: 15px;
+  font-weight: normal;
+}
+
+.inputTable,
+.etcTable {
+  width: 100%;
+  position: relative;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+.inputTable th,
+.inputTable td,
+.etcTable th,
+.etcTable td {
+  line-height: 50px;
+}
+
+.inputTable tr,
+.inputTable td,
+.inputTable th {
+  border: 1px solid #dee1e6;
+}
+
+.inputTable th,
+.etcTable th {
+  width: 15%;
+  text-align: center;
+}
+.inputTable td,
+.etcTable td {
+  padding-left: 25px;
+}
+
+.etcTable tr,
+.etcTable td,
+.etcTable th {
+  border: 1px solid #dee1e6;
+}
+
+.mainTitle,
+.content {
+  font-size: 16px;
+  width: 99%;
+  min-height: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f2f2;
+  resize: none;
+}
+.content {
+  line-height: 22px;
+  margin: 10px 0;
+}
+.mainTitle:focus,
+.content:focus,
+.date:focus,
+select:focus {
+  outline: none;
+}
+
+.date {
+  text-align: start;
+  width: 130px;
+}
+.sort {
+  width: 170px;
+  height: 26px;
+}
+select {
+  width: 70px;
+  height: 24px;
+  border: none;
+}
+select:hover,
+#startdate:hover,
+#enddate:hover {
+  box-shadow: 3px 3px 3px 3px #f1f2f2;
+}
+.style-none th,
+.style-none td {
+  border: none;
+  background-color: #fff;
+  height: 50px;
+}
+
+#elapsed {
+  width: 30px;
+}
+#mainTitle,
+#content,
+#dayoff,
+#startdate,
+#dayoff_sort1,
+#dayoff_sort2,
+#enddate,
+#opinion {
+  background-color: #fff;
+}
+#opinion {
+  outline: none;
+  border: none;
+  width: 100%;
+}
+#startdate,
+#enddate {
+  border: none;
+}
+
+.tailContent {
+  padding-top: 30px;
+  line-height: 50px;
+}
+.tailContent > p {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.headline {
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  text-align: right;
+}
+
+.submitTable {
+  width: 100%;
+  text-align: center;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 150px 0px 0px 0px;
+  padding-bottom: 100px;
+}
+
+/* cssë³?ê²½ë‚´?š© ===============================================*/
+.formTable th,
+.etcTable th,
+.etcTable tr {
+  border-left: none;
+}
+.formTable2 td,
+.etcTable td,
+.etcTable tr {
+  border-right: none;
+}
+.formTable th,
+.formTable2 th,
+.inputTable th,
+.etcTable th {
+  background-color: var(--main-bg-color);
+}
+/* #f6f6f6; */
+.formTable,
+.formTable2,
+.inputTable,
+.etcTable,
+.agreeTable,
+.dealTable {
+  border-top: 2px solid var(--main-border-color);
+  border-bottom: 2px solid var(--main-border-color);
+}
+.agreeTable td {
+  border-right: 1px solid var(--sub-border-color);
+}
+.agreeTable td:last-child {
+  border-right: none;
+}
+.agreeTable th {
+  background-color: var(--main-bg-color);
+}
+
+.dealTable th {
+  background-color: var(--main-bg-color);
+  height: 20px;
+}
+.agreeTable td,
+.dealTable td {
+  border-right: 1px solid var(--sub-border-color);
+}
+.dealTable td:last-child {
+  border-right: none;
+}
+#agreeTr3 td,
+#dealTr3 td {
+  border-top: 1px solid var(--sub-border-color);
+}
+.dojang {
+  width: 50px;
+  margin-top: 15px;
+}
+/* =========================================================== */
+
+.agreeBtn {
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.agreeBtn a {
+  text-decoration: none;
+}
+
+.editBtn {
+  width: 50px;
+  height: 22px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: var(--main-bg-color);
+  border: none;
+  font-size: 16px;
+}
+
+.approval-date {
+  text-align: right !important;
+  font-size: 22px !important;
+  height: 40px !important;
+  width: 95px !important;
+}
+.approval-date option {
+  /* text-align: left; */
+}
+
+@media print {
+  @page { margin: 0 auto; }
+  body {
+    width: 100%;
+    font-size: 14px;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -webkit-print-color-adjust: exact;
+    box-sizing: border-box;
+    padding-top: 30mm;
+    background: none;
+  }
+  .container {
+    width: 100%;
+  }
+  .no-print,
+  .no_print,
+  .none_print {
+    display: none;
+  }
+  select {
+    display: none;
+  }
+  input[type='file'] {
+    display: none;
+    border: none;
+  }
+  #startdate,
+  #enddate {
+    border: none;
+  }
+  select {
+    -webkit-appearance: none; /* for chrome */
+    -moz-appearance: none; /*for firefox*/
+    appearance: none;
+    border: none;
+    text-align: start;
+  }
+  select::-ms-expand {
+    /*display:none;for IE10,11*/
+    border: none;
+    text-align: start;
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  .dealCheckBox {
+    display: none;
+  }
+  footer {
+    width: 100%;
+  }
+}
+
+/** write.php end */
+.inputTable tr,
+.inputTable td {
+  border-right: none;
+}
+#daterange {
+  width: 35%;
+  padding: 0 15px;
+  border: none;
+  padding-left: 0;
+  cursor: pointer;
+  color: #222;
+  font-size: 1rem;
+}
+label {
+  color: #222;
+  font-size: 1rem;
+}
+#upfile01 {
+  display: none;
+}
+
+.gTable2 select {
+  width: 120px;
+}
+.dealTable,
+.deal-sign {
+  display: none;
+}
+
+.deal-sign-btn {
+  margin-right: 10px;
+  font-size: 0.8rem;
+  color: #222;
+  cursor: pointer;
+  background-color: var(--main-bg-color);
+  display: inline-block;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+.formTable th,
+.formTable2 th,
+.inputTable th,
+.etcTable th {
+  letter-spacing: 0.5rem;
+  text-align: center;
+}
+
+.fpicker {
+  width: 150px;
+  background: url(/images/cals.jpg) no-repeat;
+  background-color: #fff !important;
+  background-position: calc(100% - 5px) center;
+  cursor: pointer;
+}
+
+.form-control {
+  height: 36px !important;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #d1d3e2;
+  border-radius: 0.35rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+/* .datepicker-count {
+  width: 50px;
+  text-align: center;
+} */
+
+.fpickerafter {
+  width: 80px;
+}
+
+.modOff {
+  color: #f00;
+  font-size: 13px;
+}
+
+.datepicker {
+  width: 210px;
+  height: 270px;
+}

@@ -4,7 +4,7 @@ function reg_view(uid){
 	form = document.frm_job;
 	form.type.value = 'view';
 	form.uid.value = uid;
-	form.action = '../job/index.php';
+	form.action = '/new/job/up_index.php';
 	form.submit();
 }
 

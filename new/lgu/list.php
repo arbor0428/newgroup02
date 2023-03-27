@@ -83,6 +83,9 @@ function reg_edit(uid){
 
 </form>
 
+
+<div class="mobile_scroll">
+
 <table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
 	<tr>
 		<th width='50'>¹øÈ£</th>
@@ -161,7 +164,7 @@ if($total_record != '0'){
 ?>
 </table>
 
-
+</div>
 
 
 
@@ -169,4 +172,5 @@ if($total_record != '0'){
 <?
 	$fName = 'form1';
 	include '../pageNum.php';
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
 ?>

@@ -62,6 +62,8 @@ function reg_write(uid){
 
 </form>
 
+<div class="mobile_scroll">
+
 <table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
 	<tr>
 		<th>¹øÈ£</th>
@@ -165,7 +167,7 @@ if($total_record != '0'){
 </table>
 
 
-
+</div>
 
 
 

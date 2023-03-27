@@ -222,6 +222,7 @@ function monthNum2($date1, $date2){
 			?>
 		</div>
 		<div class="m_header_top">
+			<a href="/new" class="m_home_btn"><span class="material-symbols-outlined">home</span></a>
 			<div class="m_close_btn">
 				<span class="material-symbols-outlined">
 				close
@@ -238,8 +239,7 @@ function monthNum2($date1, $date2){
 				<span class="lnr lnr-chevron-up"></span>
 				<ul class="dep2">
 					<li><a href="/new/timechk/up_index.php">근태현황</a></li>
-					<li><a href="/new/job/up_index.php">업무현황</a></li>
-					<li><a href="/new/daylog/up_index.php">업무일지</a></li>
+					
 					<li><a href="/new/member/up_index.php">인사관리</a></li>
 				</ul>
 			</li>
@@ -251,7 +251,10 @@ function monthNum2($date1, $date2){
 				<span class="lnr lnr-chevron-down"></span>
 				<span class="lnr lnr-chevron-up"></span>
 				<ul class="dep2">
+
 					<li><a href="/new/ing01/up_index.php">영업현황</a></li>
+					<li><a href="/new/job/up_index.php">업무현황</a></li>
+					<li><a href="/new/daylog/up_index.php">업무일지</a></li>
 					<li><a href="/new/ing02/up_index.php">에이젼시현황</a></li>
 					<li><a href="/new/ing02/up_index02.php">결제청구목록</a></li>
 					<li><a href="/new/ing02/up_index.php?f_status=부분제작">부분제작</a></li>
@@ -281,7 +284,9 @@ function monthNum2($date1, $date2){
 			
 			<li><iframe name='ifra_check' src='about:blank' width='0' height='0' frameborder='0' scrolling='no'></iframe></li>	
 		</ul>
-		<a href="/new" class="logo"></a>
+		<a href="/new" class="logo">
+			<img src="/images/iweblogo.jpg">
+		</a>
 	</div>
 </header>
     

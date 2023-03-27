@@ -19,9 +19,22 @@
 				box-sizing: border-box;
 				padding: 50px 0 ;
 			}
+			.content_head {
+				display: none;
+			}
+			.wrap {
+				width: 100%;
+			}
+			.bill_content_wrap {
+				width: 100%;
+				box-shadow: none;
+				margin: 0;
+				padding: 0;
+			}
 			.no_print, .none_print {
 				display: none !important;
 			}
+			
 			select {
 				border: none;
 				-webkit-appearance: none; /* for chrome */
@@ -109,156 +122,163 @@
 		#bill_total_input {width: 20%;}
 	}
 </style>
-	<div class="bill">
-		<img src="/images/iweblogo.jpg" class="bill_logo" />
-		<button class="print_btn no_print">인쇄</button>
+<div class="wrap bill_wrap">
+	<?
+		include $_SERVER["DOCUMENT_ROOT"]."/new/top_header.php";
+	?>
 
-		<div class="bill_title">
-			<input
-				type="text"
-				name="biil_title"
-				value=""
-				placeholder="구매품의서"
-			/>
-		</div>
-		
+	<div class="bill_content_wrap"> 
+		<div class="bill">
+			<img src="/images/iweblogo.jpg" class="bill_logo" />
+			<button class="print_btn no_print">인쇄</button>
 
-		<div class="bill_content">
-			<div class="bill_top_content">
-				<table>
-					<tr style="border-top: none">
-						<th width="100px">문서번호</th>
-						<td colspan="3">
-							<input type="text" id="bill_num" />
-						</td>
-					</tr>
-					<tr>
-						<th>부서</th>
-						<td>
-							<input type="text" id=""/>
-						</td>
-					</tr>
-					<tr>
-						<th>기안일</th>
-						<td><input type="text" id=""/></td>
-					</tr>
-					<tr>
-						<th>기안자</th>
-						<td><input type="text" id=""/></td>
-					</tr>
-				</table>
+			<div class="bill_title">
+				<input
+					type="text"
+					name="biil_title"
+					value=""
+					placeholder="구매품의서"
+				/>
 			</div>
+			
 
-			<div class="order_wrap">
-				<table class="order_top_tbl">
-					<tr>
-						<th>제목</th>
-						<td colspan="7">
-							<input type="text" id="" name="" style="text-align: left;"/>
-						</td>
-					</tr>
-					<tr>
-						<th rowspan="2">구매요청부서</th>
-						<td rowspan="2">
-							<input type="text" id="" name="" />
-						</td>
-						<th rowspan="2">납품요청기한</th>
-						<td rowspan="2">
-							<input type="text" id="" name="" />
-						</td>
-
-						<th rowspan="2" style="writing-mode: vertical-lr">발주</th>
-						<th>연락처</th>
-						<td colspan="2">
-							<input type="text" id="" name="" />
-						</td>
-					</tr>
-					<tr>
-						<th>일자</th>
-						<td colspan="2"> 
-							<input type="text" id="" name="" />
-						</td>
-					</tr>
-					<tr>
-						<th>대금지불방법</th>
-						<td>
-							<input type="text" id="" name="" />
-						</td>
-						<th>남품기간</th>
-						<td colspan="4">
-							<input type="text" id="" name="" />
-						</td>
-					</tr>
-
-					<tr>
-						<th>사용목적</th>
-						<td colspan="7">
-							<textarea onkeydown="resize(this)" onkeyup="resize(this)" style="border:none; text-align: left; resize: none;"></textarea>
-						</td>
-					</tr>
-				</table>
-			</div>
-
-			<div class="bill_bottom_content ">
-				<div class="row_add_wrap no_print">
-					<button id="btn_order" data-name="order">행 추가 +</button>
+			<div class="bill_content">
+				<div class="bill_top_content">
+					<table>
+						<tr style="border-top: none">
+							<th width="100px">문서번호</th>
+							<td colspan="3">
+								<input type="text" id="bill_num" />
+							</td>
+						</tr>
+						<tr>
+							<th>부서</th>
+							<td>
+								<input type="text" id=""/>
+							</td>
+						</tr>
+						<tr>
+							<th>기안일</th>
+							<td><input type="text" id=""/></td>
+						</tr>
+						<tr>
+							<th>기안자</th>
+							<td><input type="text" id=""/></td>
+						</tr>
+					</table>
 				</div>
 
-				<table id="order_list_tbl">
-					<tr>
-						<th width="5%">번호</th>
-						<th width="*">품명</th>
-						<th width="10%">규격</th>
-						<th width="10%">수량</th>
-						<th width="20%">단가(원)</th>
-						<th width="20%">비고</th>
-						<th style="width: 0;"></th>
-					</tr>
+				<div class="order_wrap">
+					<table class="order_top_tbl">
+						<tr>
+							<th>제목</th>
+							<td colspan="7">
+								<input type="text" id="" name="" style="text-align: left;"/>
+							</td>
+						</tr>
+						<tr>
+							<th rowspan="2">구매요청부서</th>
+							<td rowspan="2">
+								<input type="text" id="" name="" />
+							</td>
+							<th rowspan="2">납품요청기한</th>
+							<td rowspan="2">
+								<input type="text" id="" name="" />
+							</td>
 
-					<tr id="order_list_tr">
-						<td>
-							<input type="text" id="order_list_num1" name="order_list_num1" value="1" />
-						</td>
-						<td>
-							<input type="text" id="order_list_name1" name="order_list_name1" />
-						</td>
-						<td>
-							<input type="text" id="order_list_standard1" name="order_list_standard1" />
-						</td>
-						<td>
-							<input type="text" id="order_list_quantity1" name="order_list_quantity1" class="order_list_quantity" onchange="quantityChange(id)" />
-						</td>
-						<td>
-							<input type="text" id="order_list_price1" name="order_list_price1" class="order_list_price" onchange="transComma(); quantityChange(id);" />
-							<input type="hidden" id="order_list_total1" name="order_list_total1" class="order_list_total price" />
-						</td>
-						<td>
-							<textarea type="text" id="order_list_etc1" name="order_list_etc1" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
-						</td>
-						<td id="order_list_button1"></td>
-					</tr>
-				</table>
+							<th rowspan="2" style="writing-mode: vertical-lr">발주</th>
+							<th>연락처</th>
+							<td colspan="2">
+								<input type="text" id="" name="" />
+							</td>
+						</tr>
+						<tr>
+							<th>일자</th>
+							<td colspan="2"> 
+								<input type="text" id="" name="" />
+							</td>
+						</tr>
+						<tr>
+							<th>대금지불방법</th>
+							<td>
+								<input type="text" id="" name="" />
+							</td>
+							<th>남품기간</th>
+							<td colspan="4">
+								<input type="text" id="" name="" />
+							</td>
+						</tr>
 
+						<tr>
+							<th>사용목적</th>
+							<td colspan="7">
+								<textarea onkeydown="resize(this)" onkeyup="resize(this)" style="border:none; text-align: left; resize: none;"></textarea>
+							</td>
+						</tr>
+					</table>
+				</div>
+
+				<div class="bill_bottom_content ">
+					<div class="row_add_wrap no_print">
+						<button id="btn_order" data-name="order">행 추가 +</button>
+					</div>
+
+					<table id="order_list_tbl">
+						<tr>
+							<th width="5%">번호</th>
+							<th width="*">품명</th>
+							<th width="10%">규격</th>
+							<th width="10%">수량</th>
+							<th width="20%">단가(원)</th>
+							<th width="20%">비고</th>
+							<th style="width: 0;"></th>
+						</tr>
+
+						<tr id="order_list_tr">
+							<td>
+								<input type="text" id="order_list_num1" name="order_list_num1" value="1" />
+							</td>
+							<td>
+								<input type="text" id="order_list_name1" name="order_list_name1" />
+							</td>
+							<td>
+								<input type="text" id="order_list_standard1" name="order_list_standard1" />
+							</td>
+							<td>
+								<input type="text" id="order_list_quantity1" name="order_list_quantity1" class="order_list_quantity" onchange="quantityChange(id)" />
+							</td>
+							<td>
+								<input type="text" id="order_list_price1" name="order_list_price1" class="order_list_price" onchange="transComma(); quantityChange(id);" />
+								<input type="hidden" id="order_list_total1" name="order_list_total1" class="order_list_total price" />
+							</td>
+							<td>
+								<textarea type="text" id="order_list_etc1" name="order_list_etc1" onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+							</td>
+							<td id="order_list_button1"></td>
+						</tr>
+					</table>
+
+				</div>
+			</div>
+
+			<div class="note_wrap">
+				<p>특이사항</p>
+				<textarea onkeydown="resize(this)" onkeyup="resize(this)" style="margin-top: 10px;"></textarea>
+			</div>
+
+			<div class="bill_pay">
+				<div class="bill_total">
+					<p>합계</p>
+					<input type="text" id="bill_total_input" style="width: 50%"/>
+				</div>
 			</div>
 		</div>
-
-		<div class="note_wrap">
-			<p>특이사항</p>
-			<textarea onkeydown="resize(this)" onkeyup="resize(this)"></textarea>
+		 <div class="bill_footer">
+			<h1>
+				주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
+				<span id="dojang" style="">(인)</span>
+			</h1>
 		</div>
-
-		<div class="bill_pay">
-			<div class="bill_total">
-				<p>합계</p>
-				<input type="text" id="bill_total_input" style="width: 50%"/>
-			</div>
-		</div>
-	</div>
-	 <div class="bill_footer">
-		<h1>
-			주식회사 아이웹&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;대표이사&nbsp;&nbsp;&nbsp;조&nbsp;&nbsp;준&nbsp;&nbsp;&nbsp;
-			<span id="dojang" style="">(인)</span>
-		</h1>
 	</div>
 </div>
 <script>

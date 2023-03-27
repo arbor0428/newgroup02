@@ -1,0 +1,497 @@
+:root {
+  --main-bg-color: #e2e8f4;
+  --main-border-color: #796c98;
+  --sub-border-color: #f6f6f6;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  width: 900px;
+  margin: 0 auto;
+}
+
+.container,
+.container td,
+.container p,
+.container div,
+.container input,
+.container select,
+.container option,
+.container textarea {
+  color: #000;
+  font-size: 16px;
+}
+.container h2 {
+  color: #000;
+}
+
+/*HEADER*/
+header {
+  text-align: center;
+  position: relative;
+  margin: 100px 0px 50px 0px;
+}
+header h1 {
+  padding: 0px 0px 50px 0px;
+}
+.logo {
+  position: absolute;
+  top: -80px;
+  left: 0;
+}
+.logo img {
+  width: 120px;
+}
+
+#print_wrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+#submitBtn {
+  width: 100px;
+}
+#printBtn,
+#submitBtn {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 10px 20px;
+  color: white;
+  background-color: rgb(97, 105, 107);
+  border-radius: 5px;
+  border: none;
+}
+#printBtn:hover,
+#submitBtn:hover {
+  background-color: rgb(51, 51, 51);
+}
+main {
+  position: relative;
+}
+
+/* 결제 승인 */
+.agreeForm {
+  width: 100%;
+  height: 150px;
+}
+.agreeTable {
+  height: 150px;
+  border-collapse: collapse;
+  text-align: center;
+  position: relative;
+  float: right;
+}
+.agreeTable th,
+.agreeTable td {
+  height: 20px;
+}
+.agreeTable td,
+.dealTable td {
+  width: 100px;
+}
+
+.agreeTitle {
+  width: 20px;
+}
+.datetime {
+  width: 100px;
+  border: none;
+}
+#dateTime {
+  font-size: 12px;
+  text-align: center;
+}
+#daterange {
+  width: 300px;
+}
+
+.selectAgree {
+  width: 100px;
+  border: none;
+  text-align: center;
+}
+
+.dealCheckBox {
+  position: absolute;
+  top: -30px;
+  right: 0;
+}
+.dealCheckBox #dealOk {
+  display: block;
+  width: 50px;
+  height: 20px;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #f1f2f2;
+}
+.sign {
+  height: 70px;
+  text-align: center;
+  align-items: center;
+}
+/* 합의 */
+.dealTable {
+  height: 150px;
+  border-collapse: collapse;
+  text-align: center;
+  float: right;
+  display: none;
+  margin-right: 10px;
+}
+
+.dealTable th {
+  height: 20px;
+}
+.agreeTable input:focus,
+.dealTable input:focus {
+  outline: none;
+}
+/* 내용 */
+#submitForm {
+  width: 100%;
+  margin-top: 50px;
+}
+.formTable,
+.formTable2 {
+  width: 50%;
+  position: relative;
+  border-top: 1px solid #dee1e6;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  text-align: justify;
+  float: left;
+}
+.formTable th,
+.formTable td,
+.formTable2 th,
+.formTable2 td {
+  border: 1px solid #dee1e6;
+  line-height: 50px;
+}
+.formTable th,
+.formTable2 th {
+  width: 30%;
+  text-align: center;
+  background-color: #f1f2f2;
+}
+.formTable td,
+.formTable2 td {
+  padding-left: 25px;
+}
+.formTable2 th,
+.formTable2 td {
+  border-left: none;
+}
+.drafter {
+  width: 170px;
+  height: 26px;
+}
+.formTable input,
+.formTable2 input{
+  border: none;
+}
+.formTable input:focus,
+.formTable2 input:focus,
+.inputTable input:focus {
+  outline: none;
+}
+/* 입력 */
+.inputTable,
+.etcTable {
+  width: 100%;
+  position: relative;
+  border-collapse: collapse;
+  margin-bottom: 40px;
+  text-align: justify;
+}
+.inputTable th,
+.inputTable td,
+.etcTable th,
+.etcTable td {
+  line-height: 50px;
+}
+.inputTable th,
+.etcTable th {
+  width: 15%;
+  text-align: center;
+  background-color: #f1f2f2;
+  border: 1px solid #fff;
+}
+.inputTable td,
+.etcTable td {
+  padding-left: 25px;
+}
+.submitTable {
+  width: 100%;
+  text-align: center;
+}
+
+/* 기타 */
+.etcTable tr,
+.etcTable td,
+.etcTable th {
+  border: 1px solid #dee1e6;
+}
+
+.title,
+.content {
+  font-size: 16px;
+  width: 99%;
+  min-height: 20px;
+  border-radius: 5px;
+  border: none;
+  background-color: #f1f2f2;
+  resize: none;
+}
+.title:focus,
+.content:focus,
+.date:focus,
+select:focus {
+  outline: none;
+}
+.date,
+select {
+  font-size: 16px;
+  border-radius: 5px;
+  border: none;
+  background-color: #fff;
+  width: 170px;
+  height: 24px;
+  text-align: center;
+  transition: all 0.3s;
+  appearance: none;
+}
+.date {
+  text-align: start;
+  width: 130px;
+}
+.sort {
+  width: 170px;
+  height: 26px;
+}
+select {
+  width: 70px;
+  height: 24px;
+  border: none;
+}
+select:hover,
+#startdate:hover,
+#enddate:hover {
+  box-shadow: 3px 3px 3px 3px #f1f2f2;
+}
+.style-none th,
+.style-none td {
+  border: none;
+  background-color: #fff;
+  height: 50px;
+}
+
+#elapsed {
+  width: 30px;
+}
+#mainTitle,
+#content,
+#dayoff,
+#startdate,
+#dayoff_sort1,
+#dayoff_sort2,
+#enddate,
+#opinion {
+  background-color: #fff;
+}
+#startdate,
+#enddate {
+  border: none;
+}
+
+.tailContent {
+  padding-top: 30px;
+  line-height: 50px;
+}
+.tailContent > p {
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.headline {
+  width: 100%;
+  position: absolute;
+  top: -180px;
+  right: 0;
+  text-align: right;
+}
+#submitBtn {
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+/* FOOTER */
+footer {
+  width: 100%;
+  text-align: center;
+  margin: 150px 0px 100px 0px;
+}
+/* css변경내용 ===============================================*/
+.formTable th,
+.etcTable th,
+.etcTable tr {
+  border-left: none;
+}
+.formTable2 td,
+.etcTable td,
+.etcTable tr {
+  border-right: none;
+}
+.formTable th,
+.formTable2 th,
+.inputTable th,
+.etcTable th {
+  background-color: var(--main-bg-color);
+}
+/* #f6f6f6; */
+.formTable,
+.formTable2,
+.inputTable,
+.etcTable,
+.agreeTable,
+.dealTable {
+  border-top: 2px solid var(--main-border-color);
+  border-bottom: 2px solid var(--main-border-color);
+}
+.agreeTable th,
+.agreeTable td {
+  height: 20px;
+}
+.agreeTable td {
+  border-right: 1px solid var(--sub-border-color);
+}
+.agreeTable td:last-child {
+  border-right: none;
+}
+.agreeTable th {
+  background-color: var(--main-bg-color);
+}
+
+.dealTable th {
+  background-color: var(--main-bg-color);
+  height: 20px;
+}
+.agreeTable td,
+.dealTable td {
+  border-right: 1px solid var(--sub-border-color);
+}
+.dealTable td:last-child {
+  border-right: none;
+}
+#agreeTr3 td,
+#dealTr3 td {
+  border-top: 1px solid var(--sub-border-color);
+}
+.dojang {
+  width: 50px;
+  margin-top: 15px;
+}
+/* =========================================================== */
+/* 결재버튼! */
+
+.sign {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 70px;
+  text-align: center;
+  align-items: center;
+}
+
+.agreeBtn {
+  display: inline-block;
+  width: 50px;
+  height: 22px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+}
+.agreeBtn a {
+  text-decoration: none;
+}
+
+.editBtn {
+  width: 50px;
+  height: 22px;
+  border-radius: 5px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  background-color: var(--main-bg-color);
+  border: none;
+  font-size: 16px;
+}
+
+@media print {
+  @page {
+    size: 21cm 29.7cm; /*A4*/
+    margin: 0;
+  }
+  body {
+    width: 100%;
+    font-size: 14px;
+    -webkit-print-color-adjust: exact;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    padding-top: 30mm;
+  }
+  .container {
+    /*
+      width: 210mm;
+      height: 297mm;
+      */
+    width: 900px;
+    height: 297mm;
+  }
+  header {
+    margin: 50px 0px;
+  }
+  .no_print {
+    display: none;
+  }
+  .none_print {
+    display: none;
+  }
+  select {
+    border: none;
+  }
+  input[type='file'] {
+    display: none;
+    border: none;
+  }
+  #startdate,
+  #enddate {
+    border: none;
+  }
+  select {
+    -webkit-appearance: none; /* for chrome */
+    -moz-appearance: none; /*for firefox*/
+    appearance: none;
+    border: none;
+    text-align: start;
+  }
+  select::-ms-expand {
+    /*display:none;for IE10,11*/
+    border: none;
+    text-align: start;
+  }
+  input[type='date']::-webkit-calendar-picker-indicator {
+    display: none;
+  }
+  .dealCheckBox {
+    display: none;
+  }
+  footer {
+    width: 100%;
+  }
+}

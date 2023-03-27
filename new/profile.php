@@ -3,7 +3,7 @@
 			<!--profile_wrap -->
 			<div class="profile_box">
 				<div class="profile_wrap">
-					<div class="profile_img" style="background-image: url('/new/images/no_img_per.png')"></div>
+					<a href="/new/setting/index.php" class="profile_img" style="background-image: url('/new/images/no_img_per.png')"></a>
 					<div class="profile_info_wrap">
 						<?
 							$sql = "select * from wo_member where userid='$GBL_USERID'";

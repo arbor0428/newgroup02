@@ -371,8 +371,8 @@ function insert_row(){
 					<td align=right>
 						<table cellpadding=0 cellspacing=0 border=0 width=100>
 							<tr>
-								<td align=center width=50%><a href='javascript:check_tb1();'><img src='/img/btn_pass_ok.gif'></a></td>
-								<td align=center width=50%><a href='javascript:insert_row();'><img src='/img/btn_add.gif'></a></td>
+								<td align=center width=50%><a href='javascript:check_tb1();' class="btn_primary03">확인</a></td>
+								<td align=center width=50%><a href='javascript:insert_row();' class="btn_primary03">추가</a></td>
 							</tr>
 						</table>
 				</tr>

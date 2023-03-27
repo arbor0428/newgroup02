@@ -39,10 +39,10 @@ if (!$GBL_USERID) { ?>
 <link rel="stylesheet" href="https://cdn.linearicons.com/free/1.0.0/icon-font.min.css">
 
 <link rel="stylesheet" href="/new/css/reset.css?v=1.1" />
-<link rel="stylesheet" href="/new/css/main.css?v=1.2" />
-<link rel="stylesheet" href="/new/css/bill.css?v=1.1" />
-<link rel="stylesheet" href="/new/css/sub.css?v=1.1" />
-<link rel="stylesheet" href="/new/css/mediaquery.css?v=5" />
+<link rel="stylesheet" href="/new/css/main.css?v=1.3" />
+<link rel="stylesheet" href="/new/css/bill.css?v=1.2" />
+<link rel="stylesheet" href="/new/css/sub.css?v=1.4" />
+<link rel="stylesheet" href="/new/css/mediaquery.css?v=5.7" />
 
 
 <title>아이웹-그룹웨어(new)</title>

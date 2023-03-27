@@ -173,96 +173,86 @@ function popClose(){
 <input type='hidden' name='sTime' value='<?=$sTime?>'>
 <input type='hidden' name='eTime' value='<?=$eTime?>'>
 
-<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-	<tr>
-		<td width='48%' valign='top'>
-			<table cellpadding='0' cellspacing='0' border='0' width='100%' class='gTable2'>
-				<tr>
-					<th width='35%'>조회일자</th>
-					<td width='65%'>
-						<select name='f_year' id='f_year' onchange='set_search();'>
-						<?
-							for($i=2009; $i<=date('Y'); $i++){
-								if($f_year == $i)	$sel = 'selected';
-								else	$sel = '';
 
-								echo ("<option value='$i' $sel>$i</option>");
-							}
-						?>
-						</select>년&nbsp;
 
-						<select name='f_month' onchange='set_search();'>
-						<?
-							for($i=1; $i<=12; $i++){
-								if($f_month == $i)	$sel = 'selected';
-								else	$sel = '';
+<div class="search_container">
+	<div class="search_wrap">
+		<div class="search_row">
+			<div class="search_th">조회일자</div>
+			<div class="search_td">
+				<select name='f_year' id='f_year' onchange='set_search();'>
+					<?
+						for($i=2009; $i<=date('Y'); $i++){
+							if($f_year == $i)	$sel = 'selected';
+							else	$sel = '';
 
-								$var = sprintf('%02d',$i);
+							echo ("<option value='$i' $sel>$i</option>");
+						}
+					?>
+				</select>년&nbsp;
 
-								echo ("<option value='$var' $sel>$i</option>");
-							}
-						?>
-						</select>월
-					</td>
-				</tr>
+				<select name='f_month' onchange='set_search();'>
+					<?
+						for($i=1; $i<=12; $i++){
+							if($f_month == $i)	$sel = 'selected';
+							else	$sel = '';
 
-				<tr> 
-					<th>담당자</th>
-					<td>
-						<select name='f_userid' id='f_userid' onchange='set_search();'>
-						<?
-							for($i=0; $i<count($arr_member); $i++){
-						?>
-							<option value='<?=$arr_userid[$i]?>' <?if($f_userid==$arr_userid[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
-						<?
-							}
-						?>
-						</select>
-					</td>
-				</tr>
-			</table>
+							$var = sprintf('%02d',$i);
 
-			<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-				<tr>
-					<td align='center' style='padding:10px 0 0 0;'>
-						<a href="javascript:timeViewer();" class='big cbtn blood'>통계자료보기</a>&nbsp;&nbsp;
-						<a href="javascript:daysViewer();" class='big cbtn blue'>일자별보기</a>
-					</td>
-				</tr>
-			</table>
-		</td>
-		<td width='4%'></td>
-		<td width='48%' valign='top'>
-			<table cellpadding='0' cellspacing='0' border='0' width='100%' class='gTable2'>
-				<tr>
-					<th width='35%'>연차수 (발생/사용)</th>
-					<td width='65%' style='font-size:18px;font-weight:800;'><?=$DayOff?> / <?=$UseOff?></td>
-				</tr>
-				<tr>
-					<th>남은 연차</th>
-					<td style='font-size:18px;font-weight:800;color:#ff0000;'><?=$ModOff?></td>
-				</tr>
-			</table>
+							echo ("<option value='$var' $sel>$i</option>");
+						}
+					?>
+				</select>월
+			</div>
+		</div>
 
-			<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-				<tr>
-					<td align='center' style='padding:10px 0 0 0;'>
-						<a href="javascript:offViewer();" class='big cbtn blood'>연차현황</a>&nbsp;&nbsp;
-						<a href="javascript:plzViewer();" class='big cbtn blue'>신청내역 (<?=$plzTot?>)</a>
-					</td>
-				</tr>
-			</table>
-		</td>
-	</tr>
-</table>
+		<div class="search_row">
+			<div class="search_th">연차수 (발생/사용)</div>
+			<div class="search_td">
+				<?=$DayOff?> / <?=$UseOff?>
+			</div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">담당자</div>
+			<div class="search_td">
+				<select name='f_userid' id='f_userid' onchange='set_search();'>
+					<?
+						for($i=0; $i<count($arr_member); $i++){
+					?>
+						<option value='<?=$arr_userid[$i]?>' <?if($f_userid==$arr_userid[$i]) echo 'selected';?>><?=$arr_member[$i]?></option>
+					<?
+						}
+					?>
+				</select>
+			</div>
+		</div>
+
+		<div class="search_row">
+			<div class="search_th">남은 연차</div>
+			<div class="search_td">	<?=$ModOff?>	</div>
+		</div>
+
+	</div>
+</div>
+<div class="serach_btn-wrap">
+	<a href="javascript:timeViewer();" class='btn_primary02'>통계자료보기</a>
+	<a href="javascript:daysViewer();" class='btn_primary02'>일자별보기</a>
+
+	<a href="javascript:offViewer();" class='btn_primary02'>연차현황</a>
+	<a href="javascript:plzViewer();" class='btn_primary02'>신청내역 (<?=$plzTot?>)</a>
+</div>
 
 
 
 
-<br><br>
 
 
-<div style='margin-bottom:3px;'><a href="javascript:set_off();" class="small cbtn green">연차적용</a></div>
+
+
+<div style='margin-bottom:3px;'><a href="javascript:set_off();" class="btn_primary03">연차적용</a></div>
+
+<div class="mobile_scroll">
 
 <table cellpadding='0' cellspacing='0' border='0' width='100%' class='listTable'>
 	<tr>
@@ -492,6 +482,8 @@ for($i=1; $i<=$day_last; $i++){
 ?>
 </table>
 
+</div>
+
 <br>
 
 <?
@@ -541,3 +533,7 @@ for($i=1; $i<=$day_last; $i++){
 
 
 </form>
+
+<?
+	include $_SERVER["DOCUMENT_ROOT"].'/new/footer.php';
+?>

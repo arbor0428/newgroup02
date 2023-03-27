@@ -49,15 +49,19 @@ font-family: 'Roboto', sans-serif;
 	bottom: 0;
 	left: 50%;
 	transform: translateX(-50%);
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 100%;
-  background: url("/new/images/logo.png") no-repeat center / contain;
-    background-color: #000;
+    background-color: #fff;
 	height: 90px;
     opacity: 0.8;
 
 /*   border-bottom: 1px solid rgba(255, 255, 255, 0.2); */
   box-sizing: border-box;
+}
+.logo img {
+	height : 50px;
 }
 .content_head {
 	box-sizing:border-box;
@@ -273,6 +277,15 @@ font-family: 'Roboto', sans-serif;
   padding: 15px 20px !important;
   box-sizing: border-box;
   gap: 20px;
+}
+.bill_content_wrap {
+	width: calc(100% - 40px);
+	margin: 20px;
+	padding: 20px;
+	box-sizing:border-box;
+	box-shadow: 0 0.15rem 1.75rem 0 rgb(58 59 69 / 15%);
+    border-radius: 4px;
+    background-color: #fff;
 }
 .main_content_left {
   width: 320px;
@@ -664,30 +677,37 @@ font-family: 'Roboto', sans-serif;
 	top: -45px;
 } 
 /*업무현황 썸네일*/
-.work_now_wrap .box_tit {
+.work_now_wrap .box_tit  {
 	margin: 0 10px 20px;
 } 
-.work_now_wrap .tbl .tbl_tr {
+.work_now_wrap .tbl .tbl_tr,
+.leave_wrap .tbl .tbl_tr{
 	margin: 3px 0;
 	width: 100%;
 }
-.work_now_wrap .tbl .tbl_tit_tr {
+.work_now_wrap .tbl .tbl_tit_tr,
+.leave_wrap .tbl .tbl_tit_tr{
 	background-color: #f5f5f5;
 	color: #333;
 }
-.work_now_wrap .tbl .tbl_tr:hover {
+.work_now_wrap .tbl .tbl_tr:hover,
+.leave_wrap .tbl .tbl_tr:hover{
 	background-color: #e0eaff;
 	color: #0071d0;
 }
-.work_now_wrap .tbl .tbl_tit_tr:hover {
+.work_now_wrap .tbl .tbl_tit_tr:hover,
+.leave_wrap .tbl .tbl_tit_tr:hover{
 	background-color: #f5f5f5;
 	color: #333;
 }
-.work_now_wrap .tbl .tbl_tr .tbl_th {
+.work_now_wrap .tbl .tbl_tr .tbl_th,
+.leave_wrap .tbl .tbl_tr .tbl_th{
 	font-weight: 700;
 }
 .work_now_wrap .tbl .tbl_tr .tbl_th,
-.work_now_wrap .tbl .tbl_tr .tbl_td {
+.work_now_wrap .tbl .tbl_tr .tbl_td,
+.leave_wrap .tbl .tbl_tr .tbl_th,
+.leave_wrap .tbl .tbl_tr .tbl_td{
 	text-align:center;
 	padding: 0 10px;
 	box-sizing:border-box;
@@ -730,23 +750,47 @@ font-family: 'Roboto', sans-serif;
 }
 .work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(3),
 .work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(3) {
-	width: 20%;
+	width: 25%;
 }
 .work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(4),
 .work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(4),
 .work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(5),
 .work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(5),
 .work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(6),
-.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(6),
-.work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(7),
-.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(7){
-	width: 10%;
-}
-.work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(8),
-.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(8){
+.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(6) {
 	width: 8.5%;
 }
-
+.work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(7),
+.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(7),
+.work_now_wrap_modify .tbl .tbl_tr .tbl_th:nth-child(8),
+.work_now_wrap_modify .tbl .tbl_tr .tbl_td:nth-child(8){
+	width: 10%;
+}
+/*휴가신청사*/
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(1),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(1),
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(3),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(3),
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(4),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(4){
+	width: 10%;
+}
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(2),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(2){
+	width: 15%;
+}
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(5),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(5){
+	width: 40%;
+}
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(6),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(6),
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(7),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(7),
+.leave_wrap .tbl .tbl_tr .tbl_th:nth-child(8),
+.leave_wrap .tbl .tbl_tr .tbl_td:nth-child(8){
+	width: 15%;
+}
 /*업무현황 진행 상태 표시*/
 .bco01{height:14px; padding:2px; border-radius:3px; background:#acc000; color:#fff;}
 .bco02{height:14px; padding:2px; border-radius:3px; background:#6fbc00; color:#fff;}

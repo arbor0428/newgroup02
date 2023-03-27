@@ -30,29 +30,20 @@ function job_search(job){
 	?>
 
 	<div class="mobile_col_wrap">
-		<div class="content_wrap">  
+		<div class="content_wrap mobile_sub_wrap">  
 
-			<div class="main_content_left_sub">
-				<table border="0" cellspacing="0" cellpadding="0" align='center' style="width: 100%;">
-					<tr>
-						<td style='padding-top:10px;padding-bottom:10px;'>
-							<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-								<tr>
-									<td width='50%'><span style='font-size:20px;font-weight:800;'>근태현황</td>
-									<td width='50%' align='right' valign='bottom'></td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td>
-							<?
-								if($GBL_MTYPE == 'A' || $GBL_USERID == 'psw2222')		include 'list.php';
-								else								include 'list_user.php';
-							?>
-						</td>
-					</tr>					
-				</table>
+			<div class="main_content_left_sub mobile_sub">
+				<div class="subPage_tit_wrap">
+					<p class="subPage_tit">근태현황</p>	
+				</div>
+
+				<div class="subPage_tbl_wrap">
+
+					<?
+						if($GBL_MTYPE == 'A' || $GBL_USERID == 'psw2222')		include 'list.php';
+						else								include 'list_user.php';
+					?>
+				</div>
 
 			</div>
 

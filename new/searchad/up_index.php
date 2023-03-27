@@ -21,50 +21,44 @@
 	?>
 
 	<div class="mobile_col_wrap">
-		<div class="content_wrap">  
+		<div class="content_wrap mobile_sub_wrap">  
 
-			<div class="main_content_left_sub">
-				<table width="1200" border="0" cellspacing="0" cellpadding="0" align='center'>
-					<tr>
-						<td style='padding-top:10px;padding-bottom:10px;'>
-							<table cellpadding='0' cellspacing='0' border='0' width='100%'>
-								<tr>
-									<td width='50%'><a href='/'><img src='/img/home.gif'></a>&nbsp;&nbsp;<span style='font-size:20px;font-weight:800;'><?=$subtit?></td>
-									<td width='50%' align='right' valign='bottom'><?if($type=='list'){?><a href='up_index.php?type=write'><img src="/img/board/register.gif" border=0></a><?}?></td>
-								</tr>
-							</table>
-						</td>
-					</tr>
-					<tr>
-						<td>
+			<div class="main_content_left_sub mobile_sub">
 
-								<?
+				<div class="subPage_tit_wrap dp_sb dp_c">
+					<p class="subPage_tit"><?=$subtit?></p>			
+											
+					<?if($type=='list'){?>
+						<a href='up_index.php?type=write' class="btn_primary02">
+							µî·Ï
+						</a>
+					<?}?>
+				</div>
+				<div class="subPage_tbl_wrap">
+					<?
 
-									$calSize = 'medium';
-									include '../module/Calendar.php';
+						$calSize = 'medium';
+						include '../module/Calendar.php';
 
-									switch($type){
-										case 'list' :
-															include 'list.php';
-															break;
+						switch($type){
+							case 'list' :
+												include 'list.php';
+												break;
 
-										case 'view' :
-															include 'view.php';
-															break;
+							case 'view' :
+												include 'view.php';
+												break;
 
-										case 'write' :
-										case 'edit' :
-															include 'write.php';
-															break;
+							case 'write' :
+							case 'edit' :
+												include 'write.php';
+												break;
 
-									}
-								?>
+						}
+					?>
 
 
-
-						</td>
-					</tr>					
-				</table>
+				</div>
 			</div>
 
 					
